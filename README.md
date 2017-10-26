@@ -1,2 +1,2 @@
 # reception-app
-mysqldump -u root recep > dump.sql
+mysql -u root recep < dump.sql
