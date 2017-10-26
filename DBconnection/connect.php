@@ -1,4 +1,9 @@
 <?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'recep');
+
 $option = array(
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     // デフォルトのエラー発生時の処理方法を指定

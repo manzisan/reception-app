@@ -1,5 +1,5 @@
 <?php
-  include("../dbconnection/config.php");
+  // include("../dbconnection/config.php");
   include("../dbconnection/connect.php");
 
   $code = $_POST["code"];
@@ -36,7 +36,7 @@
   <div id="wrapper">
     <h1><?php echo $company ?><br><?php echo $customer ?> 様<br>ようこそお越しくださいました。</h1>
     <div class="member">
-      <img src="./img/member/<?php $id == 0 ? echo $id : echo 0 ?>.jpg" alt="member">
+      <img src="./img/member/<?php echo $id == 0 ? $id : 0 ?>.jpg" alt="member">
       <p class="division"><?php echo $div ?></p>
       <small><?php echo $kana ?></small>
       <p><?php echo $name;?></p>
