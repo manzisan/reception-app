@@ -7,7 +7,7 @@
   例としてChatWorkで来訪者の通知を送信しています。
       
 ## Installation
-  ## create database recep
+  create database recep
   
   mysql -u root recep < dump.sql
   
