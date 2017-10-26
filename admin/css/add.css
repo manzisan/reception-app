@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/*************************
+  reset css
+*************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+main{
+  width: 500px;
+  margin: 0 auto;
+}
+
+main h1{
+  margin-top:30px;
+}
+
+h2{
+  font-size:20px;
+}
+
+input{
+  font-size: 20px;
+  height: 30px;
+}
+
+
+
+
+/*form time*/
+
+.form_time{
+  width: 380px;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.form_time h2{
+  width: 40px;
+  display: inline;
+}
+
+
+.form_time input{
+  float: left;
+  text-align: center;
+  width: 115px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+#datepicker {
+  background-color:#fff;
+}
+
+.form_time div{
+  width: 290px;
+  float: right;
+}
+
+.form_time div .time{
+  width: 60px;
+}
+
+.form_time div span{
+  width: 10px;
+  float: left;
+  padding-top: 5px;
+}
+
+.form_time div .calender{
+  width: 35px;
+  height: 25px;
+  float: left;
+  margin-right: 20px;
+  background-color: #000;
+}
+
+.form_time div .calender img{
+  width: 35px;
+  height: 25px;
+}
+
+
+/*form compony*/
+
+.form_company{
+  clear: both;
+  width: 380px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form_company h2{
+  width: 40px;
+  display: inline;
+}
+
+
+.form_company input{
+  float: right;
+  width: 280px;
+  font-size: 15px;
+}
+
+
+/*form yourname*/
+
+.form_customer{
+  clear: both;
+  width: 380px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form_customer h2{
+  width: 40px;
+  display: inline;
+}
+
+
+.form_customer input{
+  float: right;
+
+  width: 260px;
+  font-size: 15px;
+}
+
+.form_customer div{
+  width: 20px;
+  float: right;
+  /*margin-top: 5px;*/
+}
+
+.form_employee{
+  clear: both;
+  width: 380px;
+  text-align: center;
+  font-size: 15px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form_employee h2{
+  width: 40px;
+  display: inline;
+}
+
+
+.form_employee select{
+  float: right;
+  width: 290px;
+  font-size: 15px;
+}
+
+#dropdown{
+  background-color: #0f0;
+}
+
+#dropdown input{
+  width:150px;
+  font-size: 15px;
+  line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-weight: 400;
+}
+
+
+.submit{
+  width: 140px;
+  height: 40px;
+  font-size: 15px;
+  margin:30px 50px 0px 0px;
+  float: right;
+}
+
+
+main .comp_finish p span{
+  border-bottom: solid 2px #f00;
+}
+
+.back{
+  margin-top: 100px;
+  float: left;
+  width: 140px;
+  height: 40px;
+  font-size: 15px;
+  margin:30px 0 0 50px;
+  float: left;
+}
+
+
+.ui-datepicker td span, .ui-datepicker td a{
+  padding:2px;
+}
+
+.ui-datepicker table{
+  font-size: 12px;
+}
+
+.ui-datepicker td span, .ui-datepicker td a{
+  text-align: center;
+}

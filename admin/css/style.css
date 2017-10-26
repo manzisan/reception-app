@@ -1,0 +1,82 @@
+@charset "utf8";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper {
+  width: 1000px;
+  margin: 0px auto;
+}
+
+#dropdownMenu1 {
+  width: 250px;
+  float: left;
+  margin-right: 50px;
+}
+
+#datepicker {
+  background:#fff;
+}
+
+#refine input {
+  width: 200px;
+  margin-right: 50px;
+  float: left;
+}
+
+#refine button {
+  /*margin-right: 0px;*/
+  float: left;
+}
+
+.table {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.table tbody tr td:nth-child(7) {
+  width: 150px;
+}
+
+.table button {
+  margin-right: 10px;
+}
+
+nav {
+  text-align: center;
+}
+
+#refine input.form-control{
+  width: 250px;
+}
+
+button.btn-danger:first-child{
+  float:right;
+}
+
+button.btn-success{
+  float: left;
+  margin-right:20px;
+}
+
+#refine .btn_aaa{
+  width;:150px;
+  float: right;
+}
+
+#refine p:first-child{
+  width: 100px;
+}
+
+.refine_list{
+  width: 100%;
+}
+
+form#form {
+  display: inline;
+}
+
+td input{
+  width: 40px;
+}
