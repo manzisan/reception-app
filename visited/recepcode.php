@@ -5,33 +5,6 @@
   $title = "コード入力";
   include_once "layout/meta.php";
 ?>
-<script>
-window.onload=function()　{
-  var b_number = document.getElementsByClassName('button_number');
-  var num = document.forms.form.number_form.value;
-  var d_button = document.getElementById('delete_button');
-  var n_form = document.getElementById('number_form');
-  var inputValue = "";
-  for (var i = 0; i < b_number.length; i++) {
-    b_number[i].addEventListener('click',function(e){
-      if (inputValue.length === 4) {
-        return;
-      }
-      e.preventDefault();
-      inputValue += this.innerHTML;
-      n_form.value　=　inputValue;
-    });
-    b_number[i].addEventListener('click',function(e){
-      e.preventDefault();
-    });
-  }
-  d_button.addEventListener('click',function(e){
-    e.preventDefault();
-    inputValue　=　inputValue.slice(0,-1);
-    n_form.value = inputValue;
-  });
-}
-</script>
 <body>
   <div id="wrapper">
     <div class="inner">
@@ -73,6 +46,32 @@ window.onload=function()　{
     </form>
     </div>
   </div>
-
 </body>
+<script>
+  window.onload=function()　{
+    var b_number = document.getElementsByClassName('button_number');
+    var num = document.forms.form.number_form.value;
+    var d_button = document.getElementById('delete_button');
+    var n_form = document.getElementById('number_form');
+    var inputValue = "";
+    for (var i = 0; i < b_number.length; i++) {
+      b_number[i].addEventListener('click',function(e){
+        if (inputValue.length === 4) {
+          return;
+        }
+        e.preventDefault();
+        inputValue += this.innerHTML;
+        n_form.value　=　inputValue;
+      });
+      b_number[i].addEventListener('click',function(e){
+        e.preventDefault();
+      });
+    }
+    d_button.addEventListener('click',function(e){
+      e.preventDefault();
+      inputValue　=　inputValue.slice(0,-1);
+      n_form.value = inputValue;
+    });
+  }
+</script>
 </html>

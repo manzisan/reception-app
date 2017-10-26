@@ -48,20 +48,16 @@
       $mail->send();
 //mailer end
 
- ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="img/icon.jpg">
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="css/wait.css">
-<link rel="stylesheet" type="text/css" href="css/button.css">
-<title>受付</title>
+    $title = "呼び出し中";
+    include_once "layout/meta.php";
+?>
+<body>
+<div id="wrapper">
+  <h1>代わりの担当者を呼び出します</h1>
+
+  <p>お掛けになってお待ちください</p>
+  <a href="index.php" class="back">TOPへ戻る</a>
+</body>
 <script>
   window.onload=function(){
     var back = document.getElementById('back');
@@ -73,13 +69,4 @@
     setTimeout(returntop,5000);
   }
 </script>
-</head>
-<body>
-<div id="wrapper">
-
-  <h1>代わりの担当者を呼び出します</h1>
-
-    <p>お掛けになってお待ちください</p>
-    <a href="index.php" class="back">TOPへ戻る</a>
-</body>
 </html>

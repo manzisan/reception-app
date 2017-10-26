@@ -47,21 +47,9 @@
       $mail->send();
 //mailer end
 
-
- ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="img/icon.jpg">
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="css/wait.css">
-<link rel="stylesheet" href="css/button.css">
-<title>受付</title>
+      $title = "呼び出し中";
+      include_once "layout/meta.php";
+?>
 <script>
     $(window).on('touchmove.noScroll', function(e) {
       e.preventDefault();
