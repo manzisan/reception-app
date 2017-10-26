@@ -2,7 +2,6 @@
   include("../dbconnection/config.php");
   include("../dbconnection/connect.php");
 
-
   $code = $_POST["code"];
 
   $sql = $pdo->prepare('SELECT id, name,kana,division FROM employee where id in (select employee from schedule where code = "'.$code.'") ');
@@ -37,12 +36,7 @@
   <div id="wrapper">
     <h1><?php echo $company ?><br><?php echo $customer ?> 様<br>ようこそお越しくださいました。</h1>
     <div class="member">
-      <img src="./img/member/<?php
-        if(file_exists("./img/member/$id.jpg")){
-          echo $id;
-        }else{
-          echo "0";
-        }?>.jpg" alt="member">
+      <img src="./img/member/<?php $id == 0 ? echo $id : echo 0 ?>.jpg" alt="member">
       <p class="division"><?php echo $div ?></p>
       <small><?php echo $kana ?></small>
       <p><?php echo $name;?></p>

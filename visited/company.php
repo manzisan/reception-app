@@ -15,9 +15,4 @@
   </form>
 </div>
 </body>
-<script>
-  $(window).on('touchmove.noScroll', function(e) {
-    e.preventDefault();
-  });
-</script>
 </html>
