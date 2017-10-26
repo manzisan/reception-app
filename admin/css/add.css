@@ -49,7 +49,7 @@ table {
 }
 
 main{
-  width: 500px;
+  width: 680px;
   margin: 0 auto;
 }
 
@@ -66,9 +66,6 @@ input{
   height: 30px;
 }
 
-
-
-
 /*form time*/
 
 .form_time{
@@ -82,7 +79,6 @@ input{
   width: 40px;
   display: inline;
 }
-
 
 .form_time input{
   float: left;
@@ -205,38 +201,38 @@ input{
   width:150px;
   font-size: 15px;
   line-height: 1.42857143;
-color: #555;
-background-color: #fff;
-background-image: none;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-weight: 400;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: 400;
 }
-
 
 .submit{
   width: 140px;
   height: 40px;
   font-size: 15px;
-  margin:30px 50px 0px 0px;
-  float: right;
 }
-
 
 main .comp_finish p span{
   border-bottom: solid 2px #f00;
 }
 
 .back{
-  margin-top: 100px;
   float: left;
   width: 140px;
   height: 40px;
   font-size: 15px;
-  margin:30px 0 0 50px;
-  float: left;
 }
 
+.btn-row {
+  clear: both;
+  display: flex;
+}
+.btn-row button {
+  flex: 1;
+}
 
 .ui-datepicker td span, .ui-datepicker td a{
   padding:2px;

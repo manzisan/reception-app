@@ -1,16 +1,16 @@
 <?php
-include("../dbconnection/config.php");
-include("../dbconnection/connect.php");
+  include("../dbconnection/config.php");
+  include("../dbconnection/connect.php");
 
-$sql = $pdo->prepare('SELECT name FROM employee');
+  $sql = $pdo->prepare('SELECT name FROM employee');
 
-$sql -> execute();
+  $sql -> execute();
 
-while($row = $sql->fetch(PDO::FETCH_ASSOC)){
-  $name[] = $row["name"];
-}
+  while($row = $sql->fetch(PDO::FETCH_ASSOC)){
+    $name[] = $row["name"];
+  }
 
-$count = $sql -> rowCount();
+  $count = $sql -> rowCount();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -50,7 +50,7 @@ $(function () {
 <title>来訪予定登録</title>
 </head>
 <body>
-  <script type="text/javascript">
+<script type="text/javascript">
 function check(){
 
   var flag = 0;
@@ -73,74 +73,75 @@ function check(){
   }
   // 設定終了
 
-  if(flag){
-    window.alert('未入力の項目があります！'); // 入力漏れがあれば警告ダイアログを表示
+  if(flag) {
+    alert('未入力の項目があります！'); // 入力漏れがあれば警告ダイアログを表示
     return false; // 送信を中止
   }
-  else{
+  else {
     return true; // 送信を実行
   }
 
 }
 </script>
-<main>
-<h1>来訪予定登録</h1>
-<form method ="post" action="conf.php" name="form1" onSubmit="return check()">
-  <div class="form_time">
-    <h2>来訪日時:</h2>
-      <div>
-        <input type="text" class="form-control" name="date" id="datepicker" readonly>
-        <input type="number" class="time form-control" min="0" max="23" name="hours">
-          <span>:</span>
-        <input type="number" class="time form-control" min="0" max="59" name="minutes">
-          <span>〜</span>
+  <main>
+    <h1>アポイント登録</h1>
+    <form method ="post" action="conf.php" name="form1" onSubmit="return check()">
+
+      <div class="form_time">
+        <div class="label">日時</div>
+        <div>
+          <input type="text" class="form-control" name="date" id="datepicker" readonly>
+          <input type="number" class="time form-control" min="0" max="23" name="hours"><span>:</span>
+          <input type="number" class="time form-control" min="0" max="59" name="minutes"><span>〜</span>
+        </div>
       </div>
-  </div><!-- time -->
 
-  <div class="form_company">
-    <h2>来訪社名:</h2>
-    <input type="text" name="company" class="form-control">
-  </div>
+      <div class="form_company">
+        <div class="label">来訪社名</div>
+        <input type="text" name="company" class="form-control">
+      </div>
 
-  <div class="form_customer">
-    <h2>来訪者名:</h2>
-    <div>様</div><input type="text" name="customer" class="form-control">
-  </div>
+      <div class="form_customer">
+        <div class="label">来訪者氏名</div>
+        <input type="text" name="customer" class="form-control">様
+      </div>
 
-  <div class="form_employee">
-    <h2>担当者名:</h2>
-      <select name="employee" class="form-control">
-      <option v-for="friend in friends | filterBy search in 'name'" value="">{{ friend.name }}
-            </option>
-    </select>
-  </div>
+      <div class="form_employee">
+        <div class="label">担当者名</div>
+        <select name="employee" class="form-control">
+          <option v-for="friend in friends | filterBy search in 'name'" value="">
+            {{ friend.name }}
+          </option>
+        </select>
+      </div>
 
-  <button type="submit" class="submit btn btn-success" method="post">登録</button>
-  <button type="button" class="back btn btn-primary" onClick="location.href='index.php'">戻る</button>
+      <div class="btn-row">
+        <button type="submit" class="submit btn btn-success">登録</button>
+        <button type="button" class="back btn btn-primary" onClick="location.href='index.php'">戻る</button>
+      </div>
 
-  </form>
-</main>
+    </form>
+  </main>
 </body>
 <script>
-  window.onload=function(){
-    <?php
-      $stmt = $pdo->prepare('select id from schedule');
-      $stmt->execute();
-      $ids = array();
-      while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $ids[] = $row['id'];
-      }
-    ?>
 
-    var ids = <?= json_encode($ids); ?>;
+  <?php
+    $stmt = $pdo->prepare('select id from schedule');
+    $stmt->execute();
+    $ids = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+      $ids[] = $row['id'];
+    }
+  ?>
 
-var option = document.getElementsByTagName('option');
+  var ids = <?= json_encode($ids); ?>;
+  var option = document.getElementsByTagName('option');
 
   for (var i = 0; i < option.length; i++) {
     var id = i;
     option[i].value=id+1;
     id++;
   }
-}
-  </script>
+
+</script>
 </html>

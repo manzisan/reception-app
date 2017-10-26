@@ -1,11 +1,12 @@
-@charset "utf8";
+@charset "utf-8";
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
 #wrapper {
-  width: 1000px;
+  width: 1024px;
   margin: 0px auto;
 }
 
@@ -31,12 +32,16 @@
 }
 
 .table {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .table tbody tr td:nth-child(7) {
   width: 150px;
+}
+
+.table>thead>tr>th {
+  border: none;
 }
 
 .table button {
@@ -61,7 +66,7 @@ button.btn-success{
 }
 
 #refine .btn_aaa{
-  width;:150px;
+  width:150px;
   float: right;
 }
 
@@ -77,6 +82,11 @@ form#form {
   display: inline;
 }
 
+table.table tbody td {
+  vertical-align: baseline;
+}
+
 td input{
-  width: 40px;
+  width: 48px;
+  text-align: center;
 }
