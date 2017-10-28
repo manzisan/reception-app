@@ -7,12 +7,12 @@
   <img src="img/logo.png" alt="logo">
   <p class="clock">11:25</p>
   <p class="day"></p>
-    <div class="button_list">
-      <a href="recepcode.php">打ち合わせ</a>
-      <a href="sales.php">営業</a>
-      <a href="waitdeli.php">宅配</a>
-      <a href="waitother.php">その他</a>
-    </div>
+  <div class="button_list">
+    <a href="recepcode.php">打ち合わせ</a>
+    <a href="sales.php">営業</a>
+    <a href="waitdeli.php">宅配</a>
+    <a href="waitother.php">その他</a>
+  </div>
 </div>
 </body>
 <script>

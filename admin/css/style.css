@@ -18,6 +18,7 @@
 
 #datepicker {
   background:#fff;
+  width: 150px;
 }
 
 #refine input {
@@ -27,7 +28,6 @@
 }
 
 #refine button {
-  /*margin-right: 0px;*/
   float: left;
 }
 

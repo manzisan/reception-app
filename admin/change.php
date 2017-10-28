@@ -2,42 +2,39 @@
   include("../dbconnection/config.php");
   include("../dbconnection/connect.php");
 
+  $id = $_POST["id"];
 
-$id = $_POST["id"];
+  $stmt = $pdo -> prepare('select * from schedule where id = "'. $id.'"');
 
-$stmt = $pdo -> prepare('select * from schedule where id = "'. $id.'"');
+  //実行
+  $stmt -> execute();
+  while($sql = $stmt->fetch(PDO::FETCH_ASSOC)){
+     $date = $sql["date"];
+     $hours = $sql["hours"];
+     $minutes = $sql["minutes"];
+     $company = $sql["company"];
+     $customer = $sql["customer"];
+     $employee = $sql["employee"];
+     $code = $sql["code"];
+  }
 
-//実行
-$stmt -> execute();
-while($sql = $stmt->fetch(PDO::FETCH_ASSOC)){
-   $date = $sql["date"];
-   $hours = $sql["hours"];
-   $minutes = $sql["minutes"];
-   $company = $sql["company"];
-   $customer = $sql["customer"];
-   $employee = $sql["employee"];
-   $code = $sql["code"];
-}
+  $sql = $pdo->prepare('SELECT name,nickname FROM employee');
+  $sql -> execute();
 
+  while($row = $sql->fetch(PDO::FETCH_ASSOC)){
+    $nickname[] = $row["nickname"];
+    $name[] = $row["name"];
+  }
 
-$sql = $pdo->prepare('SELECT name,nickname FROM employee');
+  $count = $sql -> rowCount();
 
-$sql -> execute();
-
-while($row = $sql->fetch(PDO::FETCH_ASSOC)){
-  $nickname[] = $row["nickname"];
-  $name[] = $row["name"];
-}
-
-$count = $sql -> rowCount();
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/add.css">
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
@@ -70,7 +67,7 @@ $(function () {
 <title>来訪予定変更</title>
 </head>
 <body>
-  <script type="text/javascript">
+<script type="text/javascript">
 function check(){
 
   var flag = 0;

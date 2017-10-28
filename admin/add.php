@@ -11,20 +11,11 @@
   }
 
   $count = $sql -> rowCount();
+
+  $title = "トップ"
+  include_once "layout/meta.php";
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" href="css/add.css">
-<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
-<title>来訪予定登録</title>
-</head>
+
 <body>
   <main>
     <h1>来訪予定登録</h1>
@@ -33,8 +24,8 @@
         <div class="input-label">日時</div>
         <div>
           <input type="text" class="form-control" name="date" id="datepicker" readonly>
-          <input type="text" class="time form-control" maxlength="2" name="hours"><span>:</span>
-          <input type="text" class="time form-control" maxlength="2" name="minutes"><span>〜</span>
+          <input type="text" class="time form-control" maxlength="2" name="hours">:
+          <input type="text" class="time form-control" maxlength="2" name="minutes">
         </div>
       </div>
 
@@ -61,7 +52,6 @@
         <button type="submit" class="submit btn btn-success">登録</button>
         <button type="button" class="back btn btn-primary" onClick="location.href='index.php'">戻る</button>
       </div>
-
     </form>
   </main>
 </body>
@@ -84,6 +74,7 @@
     option[i].value=id+1;
     id++;
   }
+
   $(function () {
   var dateFormat = 'yy-mm-dd';
     $('#datepicker').datepicker({
@@ -92,21 +83,23 @@
 
     var myModel = {
       friends: [
-      <?php for ($i=0; $i < $count; $i++) {
-          echo "{ name: \"$name[$i]\",},";
-         }
+        <?php
+          for ($i=0; $i < $count; $i++) {
+            echo "{ name: \"$name[$i]\",},";
+          }
         ?>
       ],
       search: ""
-
     };
 
     var myViewModel = new Vue({
       el: '.form_employee',
       data: myModel
     });
+
   });
-  function check(){
+
+  function check() {
 
     var flag = 0;
 
@@ -136,5 +129,6 @@
       return true; // 送信を実行
     }
   }
+
 </script>
 </html>
