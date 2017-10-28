@@ -1,129 +1,81 @@
-@charset "utf-8";
+#add {
+  main{
+    width: 680px;
+    margin: 0 auto;
+    h1{
+      margin-top:30px;
+    }
 
-/*************************
-  reset css
-*************************/
+    h2{
+      font-size:20px;
+    }
+    .comp_finish p span {
+      border-bottom: solid 2px #f00;
+    }
+  }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+  form {
+    width: 500px;
+    .input-label {
+      margin: 16px 0 0;
+      font-weight: bold;
+    }
+    input[type="text"].form-control,select.form-control {
+      width: 100%;
+      padding: 8px;
+      &.date {
+        display: inline-block;
+        width: 120px;
+      }
+      &.time {
+        display: inline-block;
+        width: 60px;
+      }
+    }
+  }
 
-main{
-  width: 680px;
-  margin: 0 auto;
-}
+  #dropdown{
+    background-color: #0f0;
+    input{
+      width:150px;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-weight: 400;
+    }
+  }
 
-main h1{
-  margin-top:30px;
-}
+  .btn-row {
+    display: flex;
+    margin-top: 24px;
+    button {
+      flex: 1;
+    }
+    .back{
+      width: 140px;
+      height: 40px;
+      font-size: 15px;
+    }
+    .submit{
+      width: 140px;
+      height: 40px;
+      font-size: 15px;
+    }
+  }
 
-h2{
-  font-size:20px;
-}
+  .ui-datepicker td span, .ui-datepicker td a{
+    padding:2px;
+  }
 
-input{
-  font-size: 20px;
-  height: 30px;
-}
+  .ui-datepicker table{
+    font-size: 12px;
+  }
 
-form {
-  width: 500px;
-}
-form .form-control {
-  display: inline-block;
-  width: auto;
-}
-
-#dropdown{
-  background-color: #0f0;
-}
-
-
-#dropdown input{
-  width:150px;
-  font-size: 15px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-weight: 400;
-}
-
-.submit{
-  width: 140px;
-  height: 40px;
-  font-size: 15px;
-}
-
-main .comp_finish p span{
-  border-bottom: solid 2px #f00;
-}
-
-.back{
-  float: left;
-  width: 140px;
-  height: 40px;
-  font-size: 15px;
-}
-
-.btn-row {
-  clear: both;
-  display: flex;
-}
-.btn-row button {
-  flex: 1;
-}
-
-.ui-datepicker td span, .ui-datepicker td a{
-  padding:2px;
-}
-
-.ui-datepicker table{
-  font-size: 12px;
-}
-
-.ui-datepicker td span, .ui-datepicker td a{
-  text-align: center;
+  .ui-datepicker td span, .ui-datepicker td a{
+    text-align: center;
+  }
 }

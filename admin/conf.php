@@ -18,50 +18,43 @@
 
   $disp_employee = $name;
 
- ?>
- <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <link rel="stylesheet" type = "text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/conf.css">
-  <title>来訪予定登録完了</title>
-</head>
-  <body>
+  $title = "登録完了";
+  include_once "layout/meta.php";
+?>
+<body>
   <main>
-  <h1>来訪予定登録完了</h1>
+    <h1>来訪予定登録完了</h1>
     <form action="comp.php" method="post">
-    <section>
-      <h2>来訪日時:</h2>
+      <section>
+        <h2>来訪日時:</h2>
         <p class="comp_content"><?php echo $date ?>&nbsp;<?php echo $hours ?>:<?php echo $minutes ?></p>
         <input type="hidden" name="date" value="<?php echo $date ?>">
         <input type="hidden" name="hours" value="<?php echo $hours ?>">
         <input type="hidden" name="minutes" value="<?php echo $minutes ?>">
-    </section>
+      </section>
 
-    <section>
-      <h2>来訪社名:</h2>
+      <section>
+        <h2>来訪社名:</h2>
         <p class="comp_content"><?php echo $company ?></p>
         <input type="hidden" name="company" value="<?php echo $company ?>">
-    </section>
+      </section>
 
-    <section>
-      <h2>来訪者名:</h2>
+      <section>
+        <h2>来訪者名:</h2>
         <p class="comp_content"><?php echo $customer?></p>
         <input type="hidden" name="customer" value="<?php echo $customer ?>">
-    </section>
+      </section>
 
-    <section>
-      <h2>担当者名:</h2>
+      <section>
+        <h2>担当者名:</h2>
         <p class="comp_content"><?php echo $disp_employee ?></p>
         <input type="hidden" name="employee" value="<?php echo $employee ?>">
-    </section>
+      </section>
 
-          <p class="comp_p">でよろしいですか？</p>
-          <button type="submit" class="submit btn btn-success" method="post">登録</button>
-          <button type="button" class="back btn btn-primary" onClick="location.href='add.php'">戻る</button>
+      <p class="comp_p">でよろしいですか？</p>
+      <button type="button" class="back btn btn-primary" onClick="location.href='add.php'">戻る</button>
+      <button type="submit" class="submit btn btn-success" method="post">登録</button>
     </form>
-    </main>
-  </body>
+  </main>
+</body>
 </html>

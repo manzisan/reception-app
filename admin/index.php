@@ -36,8 +36,8 @@
       </div>
       <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
       <div class="ctr_btn">
-        <button type="button" class="btn btn-success" onClick="location.href='add.php'">予定登録</button>
         <button type="button" class="btn btn-danger" onClick="location.href='alldelete.php'">一括削除</button>
+        <button type="button" class="btn btn-success" onClick="location.href='add.php'">予定登録</button>
       </div>
     </div>
     <table class="table table-hover">
@@ -63,13 +63,13 @@
           <td>{{ schedule.employee }}</td>
           <td><input type="text" value="{{ schedule.code }}" readonly></td>
           <td>
-            <form id="form" name="form" action="change.php" method="post">
-              <input type="hidden" name="id" value="<?php echo $id; ?>">
-              <button type="submit" class="btn btn-primary change">変更</button>
-            </form>
             <form id="form" name="form" action="delete.php" method="post">
               <input type="hidden" name="id" value="<?php echo $id; ?>">
               <button type="submit" class="btn btn-danger delete">削除</button>
+            </form>
+            <form id="form" name="form" action="change.php" method="post">
+              <input type="hidden" name="id" value="<?php echo $id; ?>">
+              <button type="submit" class="btn btn-primary change">変更</button>
             </form>
           </td>
         </tr> 

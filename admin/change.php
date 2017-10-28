@@ -28,81 +28,13 @@
 
   $count = $sql -> rowCount();
 
+  $title = "予定変更";
+  include_once "layout/meta.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" href="css/add.css">
-<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
-<script>
-$(function () {
-  var dateFormat = 'yy-mm-dd';
-  $('#datepicker').datepicker({
-      dateFormat: dateFormat
-  });
-
-  var myModel = {
-    friends: [
-    <?php for ($i=0; $i < $count; $i++) {
-        echo "{ name: \"$name[$i]($nickname[$i])\",},";
-       }
-      ?>
-    ],
-    search: ""
-
-  };
-
-  var myViewModel = new Vue({
-    el: '.form_employee',
-    data: myModel
-  });
-});
-</script>
-<title>来訪予定変更</title>
-</head>
 <body>
-<script type="text/javascript">
-function check(){
-
-  var flag = 0;
-
-  // 設定
-  if(document.form1.date.value == ""){
-    flag = 1;
-  }
-  else if(document.form1.hours.value == ""){
-    flag = 1;
-  }
-  else if(document.form1.minutes.value == ""){
-    flag = 1;
-  }
-  else if(document.form1.company.value == ""){
-    flag = 1;
-  }
-  else if(document.form1.customer.value == ""){
-    flag = 1;
-  }
-  // 設定終了
-
-  if(flag){
-    window.alert('未入力の項目があります！'); // 入力漏れがあれば警告ダイアログを表示
-    return false; // 送信を中止
-  }
-  else{
-    return true; // 送信を実行
-  }
-
-}
-</script>
 <main>
 <h1>来訪予定変更</h1>
-<form method ="post" action="cng_run.php" name="form1" onSubmit="return check()">
+<form method ="post" action="cng_run.php" name="form1">
   <div class="form_time">
     <h2>来訪日時:</h2>
       <div>
@@ -139,6 +71,30 @@ function check(){
   <button type="button" class="back btn btn-primary" onClick="location.href='index.php'">戻る</button>
   </form>
 </main>
+<script>
+$(function () {
+  var dateFormat = 'yy-mm-dd';
+  $('#datepicker').datepicker({
+      dateFormat: dateFormat
+  });
+
+  var myModel = {
+    friends: [
+    <?php for ($i=0; $i < $count; $i++) {
+        echo "{ name: \"$name[$i]($nickname[$i])\",},";
+       }
+      ?>
+    ],
+    search: ""
+
+  };
+
+  var myViewModel = new Vue({
+    el: '.form_employee',
+    data: myModel
+  });
+});
+</script>
 <script>
   window.onload=function(){
     <?php
