@@ -21,7 +21,7 @@
     }
     $employee = $name;
   }
-  var_dump($name);
+  // var_dump($name);
 ?>
 <body>
   <div id="wrapper">
@@ -60,14 +60,14 @@
           <td>{{ schedule.company }}</td>
           <td>{{ schedule.customer }}</td>
           <td>{{ schedule.employee }}</td>
-          <td><input type="text" value="{{ schedule.code }}" readonly></td>
+          <td><input type="text" v-bind:value="schedule.code" readonly></td>
           <td>
             <form id="form" name="form" action="delete.php" method="post">
-              <input type="hidden" name="id" value="{{ schedule.id }}">
+              <input type="hidden" name="id" v-bind:value="schedule.id">
               <button type="submit" class="btn btn-danger delete">削除</button>
             </form>
             <form id="form" name="form" action="change.php" method="post">
-              <input type="hidden" name="id" value="{{ schedule.id }}">
+              <input type="hidden" name="id" v-bind:value="schedule.id">
               <button type="submit" class="btn btn-primary change">変更</button>
             </form>
           </td>

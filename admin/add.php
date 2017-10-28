@@ -15,7 +15,6 @@
   $title = "予定登録";
   include_once "layout/meta.php";
 ?>
-
 <body id="add">
   <main>
     <h1>来訪予定登録</h1>

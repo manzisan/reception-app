@@ -30,7 +30,8 @@ gulp.task("visi", function() {
     --------------------------------------------*/
     gulp.src(["visited/src/sass/*.scss"])
         .pipe(frontNote({
-          out: './doc',
+          out: '',
+          assets: '',
           overview: './styleguide.md', // Overview page
           // css: './src/sass/style.scss' // style guide for css
         }))
@@ -66,7 +67,8 @@ gulp.task("ad", function() {
     --------------------------------------------*/
     gulp.src(["admin/src/sass/*.scss"])
         .pipe(frontNote({
-          out: './doc',
+          out: '',
+          assets: '',
           overview: './styleguide.md', // Overview page
           // css: './src/sass/style.scss' // style guide for css
         }))
