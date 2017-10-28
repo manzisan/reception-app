@@ -1,0 +1,81 @@
+#add,#change {
+  main {
+    width: 680px;
+    margin: 0 auto;
+    h1{
+      margin-top:30px;
+    }
+
+    h2{
+      font-size:20px;
+    }
+    .comp_finish p span {
+      border-bottom: solid 2px #f00;
+    }
+  }
+
+  form {
+    width: 500px;
+    .input-label {
+      margin: 16px 0 0;
+      font-weight: bold;
+    }
+    input[type="text"].form-control,select.form-control {
+      width: 100%;
+      padding: 8px;
+      &.date {
+        display: inline-block;
+        width: 120px;
+      }
+      &.time {
+        display: inline-block;
+        width: 60px;
+      }
+    }
+  }
+
+  #dropdown{
+    background-color: #0f0;
+    input{
+      width:150px;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-weight: 400;
+    }
+  }
+
+  .btn-row {
+    display: flex;
+    margin-top: 24px;
+    button {
+      flex: 1;
+    }
+    .back{
+      width: 140px;
+      height: 40px;
+      font-size: 15px;
+    }
+    .submit{
+      width: 140px;
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+
+  .ui-datepicker td span, .ui-datepicker td a{
+    padding:2px;
+  }
+
+  .ui-datepicker table{
+    font-size: 12px;
+  }
+
+  .ui-datepicker td span, .ui-datepicker td a{
+    text-align: center;
+  }
+}

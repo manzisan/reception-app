@@ -131,25 +131,20 @@ h1  {
   width: 280px;
   height: 130px;
   background-color: #fff;
-  float: left;
+  // float: left;
   border: solid 1px #000;
   box-sizing: border-box;
   position: relative;
 }
 
 .list_name {
-  float: right;
-  margin-right: 10px;
+  // margin-right: 10px;
 }
 
 .list img {
-  clear: both;
   width: 90px;
-  position: absolute;
-  left: 15px;
-  top: 11px;
   background:url("../img/member/0.jpg");
-  background-size: 90px;
+  // background-size: 90px;
 }
 
 .list span {
@@ -163,15 +158,7 @@ h1  {
   width: 150px;
   margin:auto;
   font-size: 16px;
-  padding-left: 50px;
-}
-
-.list p:first-child {
-  padding-bottom: 15px;
-}
-
-.list p:nth-child(2) {
-  font-size: 12px;
+  // padding-left: 50px;
 }
 
 .list:hover {

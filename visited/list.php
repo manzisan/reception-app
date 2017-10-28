@@ -19,29 +19,27 @@
   include_once "layout/meta.php";
 ?>
 <body>
-<div id="wrapper">
-  <h1>担当者を選択してください</h1>
+  <div id="wrapper">
+    <h1>担当者を選択してください</h1>
     <form action="unknown.php" method="post">
-        <button class="forget">担当者がご不明な方</button>
-        <input type="hidden" name="company" value="<?php echo $company; ?>">
-        <input type="hidden" name="name" value="<?php echo $name; ?>">
+      <button class="forget">担当者がご不明な方</button>
+      <input type="hidden" name="company" value="<?php echo $company; ?>">
+      <input type="hidden" name="name" value="<?php echo $name; ?>">
     </form>
 
     <form action="callsub.php" method="post" id="form">
-        <input type="hidden" name="company" value="<?php echo $company; ?>">
-        <input type="hidden" name="name" value="<?php echo $name; ?>">
-          <div class="employee_list">
-              <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
-                <div class="list_name">
-                  <p>{{ friend.division }}</p>
-                <p>{{ friend.kana }}</p>
-                  <span>
-                    {{ friend.name }}
-                  </span>
-                </div>
-                <img src="./img/member/{{ friend.id }}.jpg">
-              </button>
+      <input type="hidden" name="company" value="<?php echo $company; ?>">
+      <input type="hidden" name="name" value="<?php echo $name; ?>">
+      <div class="employee_list">
+        <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
+          <div class="list_name">
+            <p>{{ friend.division }}</p>
+            <p>{{ friend.kana }}</p>
+            <span>{{ friend.name }}</span>
           </div>
+          <img src="./img/member/{{ friend.id }}.jpg">
+        </button>
+      </div>
       <ul class="initial_list">
         <li class="initial">あ</li> 
         <li class="initial">か</li>
@@ -55,11 +53,13 @@
         <li class="initial">わ</li>
       </ul>
       <a href="company.php" class="back">戻る</a>
-</div>
+    </form>
+  </div>
 </body>
 <script>
   $(function(){
-    var friends = <?php echo json_encode($friends);?>
+    var friends = <?php echo json_encode($friends);?>;
+    console.log(friends);
     var namelist = {
       friends: friends,
       search: ""
@@ -88,14 +88,14 @@
 
     for (var i = 0; i < li.length; i++) {
       li[i].addEventListener('click',function(e){
-          e.preventDefault();
-            myViewModel.search = this.innerHTML;
-            var list = kanaList[this.innerHTML];
-            var filteredFriends = friends.filter(function(friend) {
-              console.log(friend.kana,friend.kana.charAt(0),list.indexOf(friend.kana.charAt(0)) !== -1)
-              return (list.indexOf(friend.kana.charAt(0)) !== -1);
-            });
-            myViewModel.friends = filteredFriends;
+        e.preventDefault();
+        myViewModel.search = this.innerHTML;
+        var list = kanaList[this.innerHTML];
+        var filteredFriends = friends.filter(function(friend) {
+          console.log(friend.kana,friend.kana.charAt(0),list.indexOf(friend.kana.charAt(0)) !== -1)
+          return (list.indexOf(friend.kana.charAt(0)) !== -1);
+        });
+        myViewModel.friends = filteredFriends;
       });
     }
   });

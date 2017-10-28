@@ -1,8 +1,9 @@
 @charset "utf-8";
+@import "add","bootstrap","comp","conf";
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
-* {
-  margin: 0px;
-  padding: 0px;
+body {
+font-family: 'Noto Sans Japanese', serif;
 }
 
 #wrapper {
@@ -18,6 +19,7 @@
 
 #datepicker {
   background:#fff;
+  width: 150px;
 }
 
 #refine input {
@@ -27,7 +29,6 @@
 }
 
 #refine button {
-  /*margin-right: 0px;*/
   float: left;
 }
 
@@ -56,18 +57,12 @@ nav {
   width: 250px;
 }
 
-button.btn-danger:first-child{
-  float:right;
+button.btn-danger {
+  margin-right: 8px;
 }
 
-button.btn-success{
-  float: left;
-  margin-right:20px;
-}
-
-#refine .btn_aaa{
-  width:150px;
-  float: right;
+button.btn-success {
+  
 }
 
 #refine p:first-child{
