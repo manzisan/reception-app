@@ -53,7 +53,7 @@
       <div class="input-row employee">
         <div class="input-label">担当者名</div>
         <select name="employee" class="form-control">
-          <option v-for="employee in employees" value="{{ employee.id }}">
+          <option v-for="employee in employees"  v-bind:value="employee.id">
             {{ employee.name }}
           </option>
         </select>

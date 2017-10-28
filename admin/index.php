@@ -6,7 +6,7 @@
 
   $stmt -> execute();
 
-  $title = "トップ";
+  $title = "一覧";
   include_once "layout/meta.php";
 
   $schedule_list = [];
@@ -26,10 +26,9 @@
 <body>
   <div id="wrapper">
     <header>
-      <h1>来訪予定</h1>
+      <h1>スケジュール一覧</h1>
     </header>
     <div id="refine">
-      <p>絞り込み</p>
       <div id="dropdown">
         <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly value="">
       </div>
