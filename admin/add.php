@@ -16,8 +16,8 @@
   include_once "layout/meta.php";
 ?>
 
-<body>
-  <main id="add">
+<body id="add">
+  <main>
     <h1>来訪予定登録</h1>
     <form method ="post" action="conf.php" name="form1">
       <div class="input-row">
@@ -40,7 +40,7 @@
       <div class="input-row employee">
         <div class="input-label">担当者名</div>
         <select name="employee" class="form-control">
-          <option v-for="employee in employees | filterBy search in 'name'" value="{{ employee.id }}">
+          <option v-for="employee in employees" value="{{ employee.id }}">
             {{ employee.name }}
           </option>
         </select>

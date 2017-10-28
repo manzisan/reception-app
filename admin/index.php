@@ -10,19 +10,18 @@
   include_once "layout/meta.php";
 
   $schedule_list = [];
-
+  $name = [];
   foreach ($stmt as $row) {
     array_push($schedule_list, $row);
     $employee = $row["employee"];
-
     $sql = $pdo -> prepare('SELECT name from employee where id = '.$employee);
     $sql -> execute();
     while($emp = $sql -> fetch(PDO::FETCH_ASSOC)){
-      $name = $emp["name"];
+      $name[] = $emp["name"];
     }
     $employee = $name;
-    
   }
+  var_dump($name);
 ?>
 <body>
   <div id="wrapper">
@@ -64,11 +63,11 @@
           <td><input type="text" value="{{ schedule.code }}" readonly></td>
           <td>
             <form id="form" name="form" action="delete.php" method="post">
-              <input type="hidden" name="id" value="<?php echo $id; ?>">
+              <input type="hidden" name="id" value="{{ schedule.id }}">
               <button type="submit" class="btn btn-danger delete">削除</button>
             </form>
             <form id="form" name="form" action="change.php" method="post">
-              <input type="hidden" name="id" value="<?php echo $id; ?>">
+              <input type="hidden" name="id" value="{{ schedule.id }}">
               <button type="submit" class="btn btn-primary change">変更</button>
             </form>
           </td>
