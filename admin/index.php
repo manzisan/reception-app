@@ -21,7 +21,7 @@
       $name = $emp["name"];
     }
     $employee = $name;
-    echo $employee;
+    
   }
 ?>
 <body>
@@ -32,7 +32,7 @@
     <div id="refine">
       <p>絞り込み</p>
       <div id="dropdown">
-        <input type="text" class="form-control" id="datepicker" placeholder="日付" readonly>
+        <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly value="">
       </div>
       <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
       <div class="ctr_btn">
@@ -85,7 +85,6 @@
       emp_name: "<?php echo $employee; ?>",
       search: ""
     };
-    console.log(schedule);
     var myViewModel = new Vue({
       el: '.schedule-list',
       data: schedule_list
@@ -99,12 +98,12 @@
     var emplist = document.getElementById('emp-name');
     emplist.addEventListener('input',()=> {
       console.log(this.value);
+      console.log($('#datepicker').val());
     });
 
-    $('#datepicker').on('input',()=>{
-      console.log($(this));
-      return $(this).val();
-      console.log(myViewModel.search);
+    $('.search-date').on('change',()=>{
+      schedule_list.search = $('#datepicker').val();
+      console.log(schedule_list.search);
     });
 
   });

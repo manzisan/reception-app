@@ -19,29 +19,27 @@
   include_once "layout/meta.php";
 ?>
 <body>
-<div id="wrapper">
-  <h1>担当者を選択してください</h1>
+  <div id="wrapper">
+    <h1>担当者を選択してください</h1>
     <form action="unknown.php" method="post">
-        <button class="forget">担当者がご不明な方</button>
-        <input type="hidden" name="company" value="<?php echo $company; ?>">
-        <input type="hidden" name="name" value="<?php echo $name; ?>">
+      <button class="forget">担当者がご不明な方</button>
+      <input type="hidden" name="company" value="<?php echo $company; ?>">
+      <input type="hidden" name="name" value="<?php echo $name; ?>">
     </form>
 
     <form action="callsub.php" method="post" id="form">
-        <input type="hidden" name="company" value="<?php echo $company; ?>">
-        <input type="hidden" name="name" value="<?php echo $name; ?>">
-          <div class="employee_list">
-              <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
-                <div class="list_name">
-                  <p>{{ friend.division }}</p>
-                <p>{{ friend.kana }}</p>
-                  <span>
-                    {{ friend.name }}
-                  </span>
-                </div>
-                <img src="./img/member/{{ friend.id }}.jpg">
-              </button>
+      <input type="hidden" name="company" value="<?php echo $company; ?>">
+      <input type="hidden" name="name" value="<?php echo $name; ?>">
+      <div class="employee_list">
+        <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
+          <div class="list_name">
+            <p>{{ friend.division }}</p>
+            <p>{{ friend.kana }}</p>
+            <span>{{ friend.name }}</span>
           </div>
+          <img src="./img/member/{{ friend.id }}.jpg">
+        </button>
+      </div>
       <ul class="initial_list">
         <li class="initial">あ</li> 
         <li class="initial">か</li>
@@ -55,7 +53,8 @@
         <li class="initial">わ</li>
       </ul>
       <a href="company.php" class="back">戻る</a>
-</div>
+    </form>
+  </div>
 </body>
 <script>
   $(function(){

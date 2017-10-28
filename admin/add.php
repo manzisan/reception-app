@@ -7,19 +7,20 @@
   $sql -> execute();
 
   while($row = $sql->fetch(PDO::FETCH_ASSOC)){
+    array_push($ids, $row);
     $name[] = $row["name"];
   }
 
   $count = $sql -> rowCount();
 
-  $title = "トップ"
+  $title = "トップ";
   include_once "layout/meta.php";
 ?>
 
 <body>
   <main>
     <h1>来訪予定登録</h1>
-    <form method ="post" action="conf.php" name="form1" onSubmit="return check()">
+    <form method ="post" action="conf.php" name="form1">
       <div class="form_time">
         <div class="input-label">日時</div>
         <div>
@@ -42,7 +43,7 @@
       <div class="form_employee">
         <div class="input-label">担当者名</div>
         <select name="employee" class="form-control">
-          <option v-for="friend in friends | filterBy search in 'name'" value="">
+          <option v-for="friend in friends | filterBy search in 'name'" value="{{ friend.id }}">
             {{ friend.name }}
           </option>
         </select>
@@ -98,37 +99,6 @@
     });
 
   });
-
-  function check() {
-
-    var flag = 0;
-
-    // 設定
-    if(document.form1.date.value == ""){ // 「お名前」の入力をチェック
-      flag = 1;
-    }
-    else if(document.form1.hours.value == ""){ // 「パスワード」の入力をチェック
-      flag = 1;
-    }
-    else if(document.form1.minutes.value == ""){ // 「コメント」の入力をチェック
-      flag = 1;
-    }
-    else if(document.form1.company.value == ""){ // 「コメント」の入力をチェック
-      flag = 1;
-    }
-    else if(document.form1.employee.value == ""){ // 「コメント」の入力をチェック
-      flag = 1;
-    }
-    // 設定終了
-
-    if(flag) {
-      alert('未入力の項目があります！'); // 入力漏れがあれば警告ダイアログを表示
-      return false; // 送信を中止
-    }
-    else {
-      return true; // 送信を実行
-    }
-  }
 
 </script>
 </html>
