@@ -1,6 +1,6 @@
 <?php
-  include("../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
   //SQL文
   $stmt = $pdo->prepare('select code from schedule');

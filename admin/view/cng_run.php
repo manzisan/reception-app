@@ -1,6 +1,6 @@
 <?php
-  include("../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
 
   $stmt = $pdo -> prepare('update schedule set date = :date, hours = :hours, minutes = :minutes, company = :company, customer = :customer, employee = :employee where code = :code');

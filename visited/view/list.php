@@ -1,6 +1,6 @@
 <?php
-  include("../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
   $company = $_POST["company"];
   $name = $_POST["name"];
@@ -32,12 +32,16 @@
       <input type="hidden" name="name" value="<?php echo $name; ?>">
       <div class="employee_list">
         <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
-          <div class="list_name">
-            <p>{{ friend.division }}</p>
-            <p>{{ friend.kana }}</p>
-            <span>{{ friend.name }}</span>
+          <div class="list-row">
+            <div class="list-name">
+              <p class="divi">{{ friend.division }}</p>
+              <p class="kana">{{ friend.kana }}</p>
+              <span class="name">{{ friend.name }}</span>
+            </div>
+            <div class="list-image">
+              <img src="../src/img/member/1.jpg">
+            </div>
           </div>
-          <img src="./img/member/{{ friend.id }}.jpg">
         </button>
       </div>
       <ul class="initial_list">

@@ -112,13 +112,6 @@ h1  {
   font-size: 40px;
 }
 
-#form p {
-  font-size: 30px;
-  font-weight: 800;
-  text-align: center;
-  padding-top: 30px;
-}
-
 
 /*=====  End of Section comment block  ======*/
 
@@ -131,14 +124,20 @@ h1  {
   width: 280px;
   height: 130px;
   background-color: #fff;
-  // float: left;
   border: solid 1px #000;
   box-sizing: border-box;
-  position: relative;
-}
-
-.list_name {
-  // margin-right: 10px;
+  .list-row {
+    display: flex;
+    .list-name, .list-image {
+      flex: 1;
+    }
+    .list-name {
+      .kana {
+        margin-top: 16px;
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 .list img {
@@ -150,8 +149,6 @@ h1  {
 .list span {
   text-align: center;
   font-size: 22px;
-  padding-left: 50px;
-  width: 50px;
 }
 
 .list p {
@@ -169,7 +166,7 @@ h1  {
   width: 840px;
   height: 300px;
   margin: auto;
-  /*margin-top: 10px;*/
+  text-align: left;
   overflow: scroll;
   border: solid 3px #000;
   border-radius: 8px;
@@ -216,11 +213,9 @@ h1  {
 }
 
 #form span {
-  font-size: 60px;
   height: 60px;
   width: 60px;
   text-align: center;
-  display: inline-block;
 }
 
  #wrapper {
@@ -280,10 +275,8 @@ h1  {
 }
 
 #form p {
-  font-size: 21px;
   font-weight: 800;
   text-align: center;
-  padding-top: 26px;
 }
 
 .button_list button {

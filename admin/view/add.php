@@ -1,6 +1,6 @@
 <?php
-  include("../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
   $sql = $pdo->prepare('SELECT name,id FROM employee');
   $sql -> execute();
@@ -13,7 +13,7 @@
   $count = $sql -> rowCount();
 
   $title = "予定登録";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body id="add">
   <main>

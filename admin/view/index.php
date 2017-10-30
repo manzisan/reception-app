@@ -1,13 +1,13 @@
 <?php
-  include("../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
   $stmt = $pdo->prepare('select * from schedule order by hours asc, minutes asc;');
 
   $stmt -> execute();
 
   $title = "一覧";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 
   $schedule_list = [];
   $name = [];
@@ -30,7 +30,7 @@
     </header>
     <div id="refine">
       <div id="dropdown">
-        <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly value="">
+        <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly>
       </div>
       <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
       <div class="ctr_btn">
@@ -103,6 +103,8 @@
       schedule_list.search = $('#datepicker').val();
       console.log(schedule_list.search);
     });
+
+
 
   });
 </script>

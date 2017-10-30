@@ -1,6 +1,6 @@
 <?php
-include("../dbconnection/config.php");
-include("../dbconnection/connect.php");
+include("../../dbconnection/config.php");
+include("../../dbconnection/connect.php");
 
 $id = $_POST["id"];
 
