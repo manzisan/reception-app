@@ -16,7 +16,7 @@
   }
 
   $title = "呼び出し";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
 <div id="wrapper">
@@ -24,12 +24,9 @@
   <h1><?php echo $company ?><br><?php echo $visitor ?> 様<br>ようこそお越しくださいました。</h1>
 
     <div class="member">
-      <img src="./img/member/
-      <?php
-        echo $id;
-      ?>.jpg">
+      <img src="./img/member/<?php echo $id;?>.jpg">
       <p class="division"><?php echo $div ?></p>
-      <small><?php echo $kana ?></small>
+      <p><?php echo $kana ?></p>
       <p class="name"><?php echo $name ?></p>a
     </div>
 

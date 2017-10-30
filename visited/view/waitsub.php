@@ -3,7 +3,7 @@
   include("../dbconnection/connect.php");
 
   $company = $_POST["company"];
-  $customer = $_POST["name"];
+  $customer = $_POST["visitor"];
 
   //chatwork start
       //chatworkのルームID *rid以下* を指定する
@@ -48,17 +48,13 @@
       $mail->send();
 //mailer end
 
-    $title = "呼び出し中";
-    include_once "layout/meta.php";
+      $title = "呼び出し中";
+      include_once "../layout/meta.php";
 ?>
-<body>
-<div id="wrapper">
-  <h1>代わりの担当者を呼び出します</h1>
-
-  <p>お掛けになってお待ちください</p>
-  <a href="index.php" class="back">TOPへ戻る</a>
-</body>
 <script>
+  $(window).on('touchmove.noScroll', function(e) {
+    e.preventDefault();
+  });
   window.onload=function(){
     var back = document.getElementById('back');
 
@@ -69,4 +65,13 @@
     setTimeout(returntop,5000);
   }
 </script>
+</head>
+<body>
+<div id="wrapper">
+  <h1>呼び出しています</h1>
+  <p>お掛けになってお待ちください</p>
+  </div class="a_list">
+    <a href="index.php" class="back">TOPへ戻る</a>
+  </div>
+</body>
 </html>

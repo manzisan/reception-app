@@ -2,14 +2,16 @@
   include("../dbconnection/config.php");
   include("../dbconnection/connect.php");
 
+  $company = $_POST["company"];
+  $customer = $_POST["name"];
 
-//chatwork start
-  //chatworkのルームID *rid以下* を指定する
-  $roomId = "58637150"; //testルームIDが入ってる
-  //APIKeyを指定する
-  $api = "be450f970e02851abc3329c64e11011c";
+  //chatwork start
+      //chatworkのルームID *rid以下* を指定する
+      $roomId = "58637150"; //testルームIDが入ってる
+      //APIKeyを指定する
+      $api = "be450f970e02851abc3329c64e11011c";
       //投稿内容を入れる
-      $body = '[info][title]来客通知[/title]来訪者がお見えになられてます。[/info]';
+      $body = '[info][title]来客通知[/title]'.$company.' '. $customer.'様がお見えになられてます。[/info]';
 
       $option = array('body' => $body);
       $ch = curl_init();
@@ -24,7 +26,6 @@
       curl_exec($ch);
       curl_close($ch);
   //chatwork end
-
 
   //mailer start
       require_once('../PHPMailer/PHPMailerAutoload.php');  //PHPMailer の読み込み
@@ -43,17 +44,21 @@
 
       $mail->Subject = mb_encode_mimeheader('来訪通知');
       $mail->CharSet = 'UTF-8';
-      $mail->Body    = '来訪者がお見えになられてます。';
+      $mail->Body    = $company.'&nbsp;'.$customer.'様がお見えになられてます。';
       $mail->send();
 //mailer end
 
-      $title = "呼び出し中";
-      include_once "layout/meta.php";
+    $title = "呼び出し中";
+    include_once "../layout/meta.php";
 ?>
+<body>
+<div id="wrapper">
+  <h1>代わりの担当者を呼び出します</h1>
+
+  <p>お掛けになってお待ちください</p>
+  <a href="index.php" class="back">TOPへ戻る</a>
+</body>
 <script>
-    $(window).on('touchmove.noScroll', function(e) {
-      e.preventDefault();
-    });
   window.onload=function(){
     var back = document.getElementById('back');
 
@@ -64,15 +69,4 @@
     setTimeout(returntop,5000);
   }
 </script>
-</head>
-<body>
-<div id="wrapper">
-
-  <h1>呼び出しています</h1>
-
-    <p>お掛けになってお待ちください</p>
-  </div class="a_list">
-    <a href="index.php" class="back">TOPへ戻る</a>
-  </div>
-</body>
 </html>

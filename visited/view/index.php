@@ -1,11 +1,11 @@
 <?php
   $title = "呼び出し";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
 <div id="wrapper">
-  <img src="img/logo.png" alt="logo">
-  <p class="clock">11:25</p>
+  <img src="../src/img/logo.png" alt="logo">
+  <p class="clock"></p>
   <p class="day"></p>
   <div class="button_list">
     <a href="recepcode.php">打ち合わせ</a>
@@ -36,9 +36,7 @@
 
     clock[0].innerHTML = hour + ':' + min ;
     day2[0].innerHTML = month + '月' + date + "日" +'（' + myDay[day] + '曜日）';
-    
-    setTimeout(clock(), 1000);
   }
-  clock();
+  setInterval(clock(),1000);
 </script>
 </html>

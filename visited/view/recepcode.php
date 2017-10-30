@@ -3,7 +3,7 @@
   echo $error;
 
   $title = "コード入力";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
   <div id="wrapper">

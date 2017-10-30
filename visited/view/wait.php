@@ -64,7 +64,7 @@
     $sql -> execute();
 
     $title = "呼び出し中";
-    include_once "layout/meta.php";
+    include_once "../layout/meta.php";
 ?>
 <body>
 <div id="wrapper">

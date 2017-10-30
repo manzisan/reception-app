@@ -50,7 +50,7 @@
 //mailer end
 
       $title ="呼び出し中";
-      include_once "layout/meta.php";
+      include_once "../layout/meta.php";
 ?>
 
   $(window).on('touchmove.noScroll', function(e) {

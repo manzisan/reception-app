@@ -16,7 +16,7 @@
   $count = $sql -> rowCount();
 
   $title = "呼び出し";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
   <div id="wrapper">
