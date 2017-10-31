@@ -64,15 +64,11 @@
     }
   }
 
-  .ui-datepicker td span, .ui-datepicker td a{
-    padding:2px;
-  }
-
-  .ui-datepicker table{
+  .ui-datepicker table {
     font-size: 12px;
-  }
-
-  .ui-datepicker td span, .ui-datepicker td a{
-    text-align: center;
+    td span,td a {
+      padding:2px;
+      text-align: center;
+    }
   }
 }

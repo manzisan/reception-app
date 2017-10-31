@@ -1,9 +1,10 @@
 @charset "utf-8";
 @import "add","bootstrap","comp","conf";
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@charset "utf-8";
 
 body {
-font-family: 'Noto Sans Japanese', serif;
+  font-family: 'Noto Sans Japanese', serif;
 }
 
 #wrapper {
@@ -18,58 +19,57 @@ font-family: 'Noto Sans Japanese', serif;
 }
 
 #datepicker {
-  background:#fff;
+  background: #fff;
   width: 150px;
 }
 
-#refine input {
-  width: 200px;
-  margin-right: 50px;
-  float: left;
-}
-
-#refine button {
-  float: left;
+#refine {
+  input {
+    width: 200px;
+    margin-right: 50px;
+    float: left;
+  }
+  button {
+    float: left;
+  }
 }
 
 .table {
   width: 100%;
   margin: 0 auto;
-}
-
-.table tbody tr td:nth-child(7) {
-  width: 150px;
-}
-
-.table>thead>tr>th {
-  border: none;
-}
-
-.table button {
-  margin-right: 10px;
+  tbody tr td:nth-child(7) {
+    width: 150px;
+  }
+  > thead > tr > th {
+    border: none;
+  }
+  button {
+    margin-right: 10px;
+  }
 }
 
 nav {
   text-align: center;
 }
 
-#refine input.form-control{
+#refine input.form-control {
   width: 250px;
 }
 
-button.btn-danger {
-  margin-right: 8px;
+button {
+  &.btn-danger {
+    margin-right: 8px;
+  }
+  &.btn-success {
+    
+  }
 }
 
-button.btn-success {
-  
-}
-
-#refine p:first-child{
+#refine p:first-child {
   width: 100px;
 }
 
-.refine_list{
+.refine_list {
   width: 100%;
 }
 
@@ -81,7 +81,7 @@ table.table tbody td {
   vertical-align: baseline;
 }
 
-td input{
+td input {
   width: 48px;
   text-align: center;
 }
