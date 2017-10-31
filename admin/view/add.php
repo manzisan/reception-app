@@ -1,5 +1,5 @@
-  　　<?php
-  inc・lude("../../dbconnection/config.php");
+<?php
+  include("../../dbconnection/config.php");
   include("../../dbconnection/connect.php");
 
   $sql = $pdo->prepare('SELECT name,id FROM employee');

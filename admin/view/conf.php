@@ -18,7 +18,7 @@
   $disp_employee = $name;
 
   $title = "登録完了";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
   <main>

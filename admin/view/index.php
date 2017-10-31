@@ -34,14 +34,13 @@
       </div>
       <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
       <div class="ctr_btn">
-        <button type="button" class="btn btn-danger" onClick="location.href='alldelete.php'">一括削除</button>
+        <button type="button" class="btn btn-danger alldelete" onClick="location.href='alldelete.php'" disabled>一括削除</button>
         <button type="button" class="btn btn-success" onClick="location.href='add.php'">予定登録</button>
       </div>
     </div>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>選択</th>
           <th>ID</th>
           <th>日付</th>
           <th>会社名</th>
@@ -49,11 +48,11 @@
           <th>担当者名</th>
           <th>招待コード</th>
           <th></th>
+          <th>選択</th>
         </tr>
       </thead>
       <tbody class="schedule-list">
         <tr v-for="schedule in schedule_lists">
-          <td><input type="checkbox" value="{{ schedule.id }}"></td>
           <td>{{ schedule.id }}</td>
           <td>{{ schedule.date }} {{ schedule.hours }}:{{ schedule.minutes }}</td>
           <td>{{ schedule.company }}</td>
@@ -70,6 +69,7 @@
               <button type="submit" class="btn btn-primary change">変更</button>
             </form>
           </td>
+          <td><input type="checkbox" value="{{ schedule.id }}" class="check-list"></td>
         </tr> 
       </tbody>
     </table>
@@ -97,6 +97,13 @@
   $('.search-date').on('change',()=> {
     schedule_list.search = $('#datepicker').val();
     console.log(schedule_list.search);
+  });
+  $('.check-list').click(function() {
+    if ($(this).prop('checked') == false) {
+      $('.alldelete').attr('disabled', 'disabled');
+    } else {
+      $('.alldelete').removeAttr('disabled');
+    }
   });
 </script>
 </html>

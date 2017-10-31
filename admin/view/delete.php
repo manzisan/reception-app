@@ -18,7 +18,7 @@
   }
 
   $title = "削除確認";
-  include_once "layout/meta.php";
+  include_once "../layout/meta.php";
 ?>
 <body>
   <main>
