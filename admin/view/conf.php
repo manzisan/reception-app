@@ -13,7 +13,6 @@
   $sql -> execute();
   while($emp = $sql -> fetch(PDO::FETCH_ASSOC)){
     $name = $emp["name"];
-    // $nickname = $emp["nickname"];
   }
 
   $disp_employee = $name;

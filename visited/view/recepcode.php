@@ -12,20 +12,14 @@
     <form action="call.php" method="post" id="form">
       <input type="text" id="number_form" value="" name="code" readonly>
       <span id="delete_button">×</span>
-      <?php
-        if($error == 1){
-          echo "<p class=\"nonecode\">該当のコードが存在しません。再度入力して下さい。</p>
-          <style>
-            .number_list{
-              margin-top:-20px;
-            }
-          </style>";
-
-        }else{
-          echo "";
-        }
-      ?>
-
+      <?php if($error == 1): ?>
+        <p class=\"nonecode\">該当のコードが存在しません。再度入力して下さい。</p>
+        <style>
+          .number_list{
+            margin-top:-20px;
+          }
+        </style>
+      <?php endif ?>
       <div class="number_list">
         <div class="button_number">1</div>
         <div class="button_number">2</div>
@@ -48,30 +42,28 @@
   </div>
 </body>
 <script>
-  window.onload=function()　{
-    var b_number = document.getElementsByClassName('button_number');
-    var num = document.forms.form.number_form.value;
-    var d_button = document.getElementById('delete_button');
-    var n_form = document.getElementById('number_form');
-    var inputValue = "";
-    for (var i = 0; i < b_number.length; i++) {
-      b_number[i].addEventListener('click',function(e){
-        if (inputValue.length === 4) {
-          return;
-        }
-        e.preventDefault();
-        inputValue += this.innerHTML;
-        n_form.value　=　inputValue;
-      });
-      b_number[i].addEventListener('click',function(e){
-        e.preventDefault();
-      });
-    }
-    d_button.addEventListener('click',function(e){
+  var b_number = document.getElementsByClassName('button_number');
+  var num = document.forms.form.number_form.value;
+  var d_button = document.getElementById('delete_button');
+  var n_form = document.getElementById('number_form');
+  var inputValue = "";
+  for (var i = 0; i < b_number.length; i++) {
+    b_number[i].addEventListener('click',function(e){
+      if (inputValue.length === 4) {
+        return;
+      }
       e.preventDefault();
-      inputValue　=　inputValue.slice(0,-1);
-      n_form.value = inputValue;
+      inputValue += this.innerHTML;
+      n_form.value　=　inputValue;
+    });
+    b_number[i].addEventListener('click',function(e){
+      e.preventDefault();
     });
   }
+  d_button.addEventListener('click',function(e){
+    e.preventDefault();
+    inputValue　=　inputValue.slice(0,-1);
+    n_form.value = inputValue;
+  });
 </script>
 </html>

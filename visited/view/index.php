@@ -16,26 +16,30 @@
 </div>
 </body>
 <script>
+  var clockE = document.getElementById('clock');
+  var dayE = document.getElementById('day');
+
   var clock = () => {
     var myDay = new Array("日","月","火","水","木","金","土");
     var now  = new Date();
-    var year = now.getFullYear(); // 年
-    var month = now.getMonth()+1; // 月
-    var date = now.getDate(); // 日
+    var month = now.getMonth()+1;
+    var date = now.getDate();
     var day = now.getDay();
-    var hour = now.getHours(); // 時
-    var min  = now.getMinutes(); // 分
-    var sec  = now.getSeconds(); // 秒
+    var hour = now.getHours();
+    var min  = now.getMinutes();
 
-    if(hour < 10) { hour = "0" + hour; }
-    if(min < 10) { min = "0" + min; }
-    if(sec < 10) { sec = "0" + sec; }
-    
-    var clock = document.getElementsByClassName('clock');
-    var day2 = document.getElementsByClassName('day');
+    if(hour < 10) {
+      hour = "0" + hour;
+    }
+    if(min < 10) {
+      min = "0" + min;
+    }
+    if(sec < 10) {
+      sec = "0" + sec;
+    }
 
-    clock[0].innerHTML = hour + ':' + min ;
-    day2[0].innerHTML = month + '月' + date + "日" +'（' + myDay[day] + '曜日）';
+    clockE.innerHTML = hour + ':' + min;
+    dayE.innerHTML = month + '月' + date + "日" +'（' + myDay[day] + '曜日）';
   }
   setInterval(clock(),1000);
 </script>

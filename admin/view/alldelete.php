@@ -7,7 +7,6 @@
   $stmt = $pdo->prepare('select * from schedule where id = :id');
   $stmt -> bindValue(':id', $id, PDO::PARAM_INT);
 
-  //実行
   $stmt -> execute();
   while($sql = $stmt->fetch(PDO::FETCH_ASSOC)){
     $date = $sql["date"];

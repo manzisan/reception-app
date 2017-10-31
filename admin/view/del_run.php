@@ -1,13 +1,13 @@
 <?php
-include("../../dbconnection/config.php");
-include("../../dbconnection/connect.php");
+  include("../../dbconnection/config.php");
+  include("../../dbconnection/connect.php");
 
-$id = $_POST["id"];
+  $id = $_POST["id"];
 
-$stmt = $pdo -> prepare('delete from schedule where id = :delete_id');
-$stmt -> bindParam(':delete_id', $id, PDO::PARAM_INT);
+  $stmt = $pdo -> prepare('delete from schedule where id = :delete_id');
+  $stmt -> bindParam(':delete_id', $id, PDO::PARAM_INT);
 
-$stmt -> execute();
+  $stmt -> execute();
 
-header('Location: index.php');
-exit;
+  header('Location: index.php');
+  exit;
