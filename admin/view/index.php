@@ -10,19 +10,18 @@
   include_once "../layout/meta.php";
 
   $schedule_list = [];
-  $name = [];
+  $emp_name = [];
+  $i = 0;
   foreach ($stmt as $row) {
-    array_push($schedule_list, $row);
+    array_push($schedule_list,$row);
     $employee_id = $row["employee"];
-    // echo $employee;
     $sql = $pdo -> prepare('SELECT name from employee where id ='.$employee_id);
     $sql -> execute();
-    while($emp = $sql -> fetch(PDO::FETCH_ASSOC)){
-      $name[] = $emp["name"];
-      var_dump($name);
+    while($emp = $sql -> fetch(PDO::FETCH_ASSOC)) {
+      $schedule_list[$i]["employee"] = $emp["name"];
+      $i++;
     }
   }
-  // var_dump($name);
 ?>
 <body>
   <div id="wrapper">
@@ -59,8 +58,7 @@
           <td>{{ schedule.date }} {{ schedule.hours }}:{{ schedule.minutes }}</td>
           <td>{{ schedule.company }}</td>
           <td>{{ schedule.customer }}</td>
-          <!-- <td v-for="employee in emp_name">{{ employee.name }}</td> -->
-          <td></td>
+          <td>{{ schedule.employee }}</td>
           <td><input type="text" v-bind:value="schedule.code" readonly></td>
           <td>
             <form id="form" name="form" action="delete.php" method="post">
@@ -79,28 +77,23 @@
 </body>
 <script type="text/javascript">
   var schedule = <?php echo json_encode($schedule_list);?>;
-  var employees = <?php echo json_encode($name);?>;
   var schedule_list = {
     schedule_lists: schedule,
-    emp_name: employees,
     search: ""
   };
   var myViewModel = new Vue({
     el: '.schedule-list',
     data: schedule_list
   });
-
   var dateFormat = 'yy-mm-dd';
   $('#datepicker').datepicker({
     dateFormat: dateFormat
   });
-
   var emplist = document.getElementById('emp-name');
   emplist.addEventListener('input',()=> {
-    console.log(this.value);
-    console.log($('#datepicker').val());
+    // console.log(this.value);
+    // console.log($('#datepicker').val());
   });
-
   $('.search-date').on('change',()=> {
     schedule_list.search = $('#datepicker').val();
     console.log(schedule_list.search);
