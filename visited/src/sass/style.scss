@@ -1,21 +1,19 @@
 ﻿@charset "utf-8";
 @import "reset","layout", "button";
 
-
-
 #top {
   #clock,#day {
     color: #fff;
   }
   .btn-column {
     width: 700px;
-    margin: 0 auto;
+    margin: 32px auto 0;
     div {
       display: flex;
       a {
         display: block;
         flex: 1;
-        padding: 8px 24px;
+        padding: 16px 24px;
         margin: 16px;
         border: solid 2px #fff;
         color: #fff;
@@ -27,6 +25,7 @@
     }
   }
 }
+
 /*=============================================
 =            Section comment block            =
 =============================================*/
