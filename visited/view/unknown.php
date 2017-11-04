@@ -1,5 +1,5 @@
 <?php
-  include("../dbconnection/config.php");
+  include("../../dbconnection/config.php");
   include("../dbconnection/connect.php");
 
   $company = $_POST["company"];

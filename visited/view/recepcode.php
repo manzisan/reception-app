@@ -5,32 +5,40 @@
   $title = "コード入力";
   include_once "../layout/meta.php";
 ?>
-<body>
+<body id="code">
   <div id="wrapper">
     <div class="inner">
     <h1>４桁の招待コードを入力してください</h1>
     <form action="call.php" method="post" id="form">
-      <input type="text" id="number_form" value="" name="code" readonly>
-      <span id="delete_button">×</span>
+      <input type="text" id="number-form" value="" name="code" readonly>
+      <span id="delete-button"><i class="fa fa-times" aria-hidden="true"></i></span>
       <?php if($error == 1): ?>
-        <p class=\"nonecode\">該当のコードが存在しません。再度入力して下さい。</p>
+        <p class=\"error\">該当のコードが存在しません。再度入力して下さい。</p>
         <style>
           .number_list{
             margin-top:-20px;
           }
         </style>
       <?php endif ?>
-      <div class="number_list">
-        <div class="button_number">1</div>
-        <div class="button_number">2</div>
-        <div class="button_number">3</div>
-        <div class="button_number">4</div>
-        <div class="button_number">5</div>
-        <div class="button_number">6</div>
-        <div class="button_number">7</div>
-        <div class="button_number">8</div>
-        <div class="button_number">9</div>
-        <div class="button_number">0</div>
+      <div class="btn-column">
+        <div class="btn-row">
+          <button class="button-number">1</button>
+          <button class="button-number">2</button>
+          <button class="button-number">3</button>
+        </div>
+        <div class="btn-row">
+          <button class="button-number">4</button>
+          <button class="button-number">5</button>
+          <button class="button-number">6</button>
+        </div>
+        <div class="btn-row">
+          <button class="button-number">7</button>
+          <button class="button-number">8</button>
+          <button class="button-number">9</button>
+        </div>
+        <div class="btn-row">
+          <button class="button-number">0</button>
+        </div>
       </div>
       <div class="a_list">
         <a href="company.php" class="forget">招待コードをお忘れの方</a>
@@ -42,10 +50,10 @@
   </div>
 </body>
 <script>
-  var b_number = document.getElementsByClassName('button_number');
-  var num = document.forms.form.number_form.value;
-  var d_button = document.getElementById('delete_button');
-  var n_form = document.getElementById('number_form');
+  var b_number = document.getElementsByClassName('button-number');
+  // var num = document.forms.form.numberform.value;
+  var d_button = document.getElementById('delete-button');
+  var n_form = document.getElementById('number-form');
   var inputValue = "";
   for (var i = 0; i < b_number.length; i++) {
     b_number[i].addEventListener('click',function(e){

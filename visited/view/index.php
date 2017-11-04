@@ -2,16 +2,20 @@
   $title = "呼び出し";
   include_once "../layout/meta.php";
 ?>
-<body>
+<body id="top">
 <div id="wrapper">
-  <img src="../src/img/logo.png" alt="logo">
-  <p class="clock"></p>
-  <p class="day"></p>
-  <div class="button_list">
-    <a href="recepcode.php">打ち合わせ</a>
-    <a href="sales.php">営業</a>
-    <a href="waitdeli.php">宅配</a>
-    <a href="waitother.php">その他</a>
+  <img src="../src/img/logo.png" alt="logo" id="logo">
+  <p id="clock"></p>
+  <p id="day"></p>
+  <div class="btn-column">
+    <div>
+      <a href="recepcode.php">打ち合わせ</a>
+      <a href="sales.php">営業</a>
+    </div>
+    <div>
+      <a href="waitdeli.php">宅配</a>
+      <a href="waitother.php">その他</a>
+    </div>
   </div>
 </div>
 </body>
@@ -33,9 +37,6 @@
     }
     if(min < 10) {
       min = "0" + min;
-    }
-    if(sec < 10) {
-      sec = "0" + sec;
     }
 
     clockE.innerHTML = hour + ':' + min;

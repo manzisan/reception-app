@@ -1,23 +1,32 @@
 ﻿@charset "utf-8";
-@import "layout", "button";
+@import "reset","layout", "button";
 
-.clock {
-  clear: both;
-  font-size: 120px;
-  color: #000;
+
+
+#top {
+  #clock,#day {
+    color: #fff;
+  }
+  .btn-column {
+    width: 700px;
+    margin: 0 auto;
+    div {
+      display: flex;
+      a {
+        display: block;
+        flex: 1;
+        padding: 8px 24px;
+        margin: 16px;
+        border: solid 2px #fff;
+        color: #fff;
+        background-color: #333;
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
 }
-
-.day {
-  font-size:30px;
-  font-weight: 800;
-}
-
-h1 {
-  padding:30px 0 10px 0;
-  text-align: center;
-  margin: auto;
-}
-
 /*=============================================
 =            Section comment block            =
 =============================================*/
@@ -199,61 +208,62 @@ h1 {
 =            Section comment block            =
 =============================================*/
 
-#form input:first-child {
-  width: 340px;
-  height: 120px;
-  border: none;
-  background: none;
-  appearance:none;
-  border-bottom: solid 7px #000;
-  font-size: 100px;
-  margin-right: 10px;
-}
+#code {
+  h1 {
+    padding: 16px 0;
+  }
+  #form input:first-child {
+    width: 340px;
+    height: 120px;
+    border: none;
+    background: none;
+    appearance:none;
+    border-bottom: solid 7px #000;
+    font-size: 100px;
+    margin-right: 10px;
+  }
 
-#form span {
-  height: 60px;
-  width: 60px;
-  text-align: center;
-}
-
- #wrapper {
-  width: 100%;
-    margin: auto;
+  #form span {
+    height: 60px;
+    width: 60px;
     text-align: center;
-}
+  }
 
-#number_form {
-  text-align: center;
-}
+  #number-form {
+    text-align: center;
+  }
 
-#delete_button {
-  font-weight: 800;
-}
+  #delete-button i {
+    font-style: 50px;
+    font-weight: bold;
+  }
 
-.nonecode {
-  color: #f00;
-  font-size: 20px;
-  margin-top: 20px;
-}
+  .error {
+    color: #f00;
+    font-size: 20px;
+    margin-top: 20px;
+  }
 
-.number_list {
-  width: 100%;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
+  .btn-column {
+    width: 100%;
+    .btn-row {
+      display: flex;
+      width: 50%;
+      margin: 16px auto 0;
+      .button-number {
+        flex: 1;
+        margin-right: 16px;
+        border-radius: 4px;
+        background-color: #333;
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+        line-height: 1;
+        color: #fff;
+      }
+    }
+  }
 }
-
-.button_number {
-  flex: 1;
-  margin-right: 16px;
-  float: left;
-  border-radius: 5px;
-  background-color: #fff;
-  font-size: 40px;
-  line-height: 75px;
-  display: inline;
-}
-
 
 /*=====  End of Section comment block  ======*/
 

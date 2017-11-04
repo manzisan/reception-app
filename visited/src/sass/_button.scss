@@ -30,16 +30,13 @@
   background-color: #eee;
   border: none;
   padding: 8px 24px;
-  line-height: 40px;
-  border-radius: 8px;
+  margin-top: 24px;
+  line-height: 1;
+  border-radius: 4px;
   color: #000;
-  text-align: center;
-  text-decoration: none;
-  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
-  position: absolute;
-  bottom: 70px;
-  left: 40%;
+
 }
 
 .back {
@@ -53,29 +50,4 @@
   right: 80px;
   border: none;
   cursor: pointer;
-}
-
-
-.button_list {
-  width: 660px;
-  margin:auto;
-  margin-top: 50px;
-}
-
-.button_list a {
-  width: 300px;
-  height: 80px;
-  display:inline-block;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  background-color: #fff;
-  float: left;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  line-height: 80px;
-}
-
-.button_list a:nth-child(1),.button_list a:nth-child(3) {
-  margin-right: 50px;
 }
