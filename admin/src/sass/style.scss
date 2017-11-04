@@ -1,50 +1,97 @@
 @charset "utf-8";
-@import "add","bootstrap","comp","conf";
+@import "add","comp","conf";
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @charset "utf-8";
 
+
+button {
+  transition: 0.3s;
+}
+
 body {
   font-family: 'Noto Sans Japanese', serif;
+  background-color: #B9382F;
 }
 
 #wrapper {
   width: 1024px;
-  margin: 0px auto;
+  margin: 32px auto;
+  background-color: #333;
+  border-radius: 8px;
 }
-
-#dropdownMenu1 {
-  width: 250px;
-  float: left;
-  margin-right: 50px;
-}
-
-#datepicker {
-  background: #fff;
-  width: 150px;
+header {
+  h1 {
+    color: #fff;
+    margin: 0;
+    padding: 16px;
+  }
 }
 
 #refine {
-  input {
-    width: 200px;
-    margin-right: 50px;
-    float: left;
+  display: flex;
+  margin: 8px 0 32px 16px;
+  .input {
+    display: flex;
+    flex: 1;
+    width: 400px;
+    input {
+      flex:1;
+      display: inline-block;
+      margin-right: 8px;
+      &#datepicker {
+        background: #fff;
+      }
+    }
   }
-  button {
-    float: left;
+  .ctrl-btn {
+    flex: 1;
+    margin-left: 16px;
+    button {
+      margin-left: 8px;
+    }
   }
 }
 
 .table {
   width: 100%;
   margin: 0 auto;
-  tbody tr td:nth-child(7) {
-    width: 150px;
-  }
-  > thead > tr > th {
-    border: none;
+  border-collapse: separate;
+  border-radius: 0 0 8px 8px;
+  thead {
+    background-color: #ec5950;
+    color: #fff;
+    tr { 
+      th {
+        border: none;
+        // border-right: 0.5px solid #fff;
+      }
+    }
+    
   }
   button {
-    margin-right: 10px;
+    border: solid 0.5px #333;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+    &:hover {
+      color: #333;
+      background-color: #fff;
+    }
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
+    .id {
+      // text-align: center;
+    }
+    .check {
+      width: 32px;
+      padding: 0 0 0 16px;
+    }
   }
 }
 
@@ -52,18 +99,14 @@ nav {
   text-align: center;
 }
 
-#refine input.form-control {
-  width: 250px;
-}
-
-button {
-  &.btn-danger {
-    margin-right: 8px;
-  }
-  &.btn-success {
+// button {
+//   &.btn-danger {
+//     margin-right: 8px;
+//   }
+//   &.btn-success {
     
-  }
-}
+//   }
+// }
 
 #refine p:first-child {
   width: 100px;

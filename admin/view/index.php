@@ -26,21 +26,22 @@
 <body>
   <div id="wrapper">
     <header>
-      <h1>スケジュール一覧</h1>
+      <h1>予定一覧</h1>
     </header>
     <div id="refine">
-      <div id="dropdown">
+      <div class="input">
         <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly>
+        <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
       </div>
-      <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
-      <div class="ctr_btn">
-        <button type="button" class="btn btn-danger alldelete" onClick="location.href='alldelete.php'" disabled>一括削除</button>
-        <button type="button" class="btn btn-success" onClick="location.href='add.php'">予定登録</button>
+      <div class="ctrl-btn">
+        <button type="button" class="btn btn-success" onClick="location.href='add.php'"><i class="fa fa-plus" aria-hidden="true"></i> 登録</button>
+        <button type="button" class="btn btn-danger alldelete" onClick="location.href='alldelete.php'" disabled><i class="fa fa-times" aria-hidden="true"></i> 削除</button>
       </div>
     </div>
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>選択</th>
           <th>ID</th>
           <th>日付</th>
           <th>会社名</th>
@@ -48,28 +49,27 @@
           <th>担当者名</th>
           <th>招待コード</th>
           <th></th>
-          <th>選択</th>
         </tr>
       </thead>
       <tbody class="schedule-list">
         <tr v-for="schedule in schedule_lists">
-          <td>{{ schedule.id }}</td>
+          <td class="check"><input type="checkbox" value="{{ schedule.id }}" class="check-list"></td>
+          <td class="id">{{ schedule.id }}</td>
           <td>{{ schedule.date }} {{ schedule.hours }}:{{ schedule.minutes }}</td>
           <td>{{ schedule.company }}</td>
           <td>{{ schedule.customer }}</td>
           <td>{{ schedule.employee }}</td>
-          <td><input type="text" v-bind:value="schedule.code" readonly></td>
+          <td><input type="text" v-bind:value="schedule.code" readonly class=""></td>
           <td>
-            <form id="form" name="form" action="delete.php" method="post">
-              <input type="hidden" name="id" v-bind:value="schedule.id">
-              <button type="submit" class="btn btn-danger delete">削除</button>
-            </form>
             <form id="form" name="form" action="change.php" method="post">
               <input type="hidden" name="id" v-bind:value="schedule.id">
-              <button type="submit" class="btn btn-primary change">変更</button>
+              <button type="submit" class="btn change"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </form>
+            <form id="form" name="form" action="delete.php" method="post">
+              <input type="hidden" name="id" v-bind:value="schedule.id">
+              <button type="submit" class="btn delete"><i class="fa fa-times" aria-hidden="true"></i></button>
             </form>
           </td>
-          <td><input type="checkbox" value="{{ schedule.id }}" class="check-list"></td>
         </tr> 
       </tbody>
     </table>
