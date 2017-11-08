@@ -1,6 +1,9 @@
 ﻿@charset "utf-8";
 @import "reset","layout", "button";
 
+/*=============================================
+=            Section comment block            =
+=============================================*/
 #top {
   #clock,#day {
     color: #fff;
@@ -29,184 +32,6 @@
 /*=============================================
 =            Section comment block            =
 =============================================*/
-
-.member {
-  width: 220px;
-  height: 305px;
-  background-color: #fff;
-  margin:auto;
-  border-radius: 3px;
-}
-
-.member img {
-  margin:20px 0 5px 0;
-  width: 150px;
-  background:url("../../src/img/member/0.jpg");
-  background-size: 150px;
-}
-
-.member .division {
-  margin-bottom: 5px;
-}
-
-.member small {
-  font-size: 12px;
-}
-
-.member .name {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.calltext {
-  margin-top: 10px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-.member {
-  width: 220px;
-  height: 305px;
-  background-color: #fff;
-  margin:auto;
-  border-radius: 3px;
-}
-
-.member img {
-  margin:20px 0 5px 0;
-  width: 150px;
-  background:url("../../src/img/member/0.jpg");
-  background-size: 150px;
-}
-
-.member .division {
-  margin-bottom: 5px;
-}
-
-.member small {
-  font-size: 12px;
-}
-
-.member .name {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.calltext {
-  margin-top: 10px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-#form .input {
-  width: 600px;
-  height: 70px;
-  border: none;
-  background:none;
-  appearance:none;
-  border-bottom: solid 5px #000;
-  font-size: 40px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-.list {
-  width: 280px;
-  height: 130px;
-  background-color: #fff;
-  border: solid 1px #000;
-  box-sizing: border-box;
-  .list-row {
-    display: flex;
-    .list-name, .list-image {
-      flex: 1;
-    }
-    .list-name {
-      .kana {
-        margin-top: 16px;
-        font-size: 12px;
-      }
-    }
-  }
-}
-
-.list img {
-  width: 90px;
-  background:url("../img/member/0.jpg");
-}
-
-.list span {
-  text-align: center;
-  font-size: 22px;
-}
-
-.list p {
-  width: 150px;
-  margin:auto;
-  font-size: 16px;
-}
-
-.list:hover {
-  border: solid 2px #4cb0f0;
-}
-
-.employee_list {
-  width: 840px;
-  height: 300px;
-  margin: auto;
-  text-align: left;
-  overflow: scroll;
-  border: solid 3px #000;
-  border-radius: 8px;
-}
-
-.initial_list {
-  width: 920px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.initial {
-  width: 72px;
-  height: 72px;
-  line-height: 72px;
-  background-color: #fff;
-  list-style: none;
-  float: left;
-  font-size: 35px;
-  margin: 0 20px 30px 0;
-  border-radius: 5px;
-}
-
-.initial:hover {
-  background-color: #bbb;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
 #code {
   h1 {
     padding: 16px 0;
@@ -259,70 +84,106 @@
         height: 80px;
         line-height: 1;
         color: #fff;
+        &:hover {
+          background: none;
+        }
       }
     }
   }
 }
 
-/*=====  End of Section comment block  ======*/
-
-
 /*=============================================
 =            Section comment block            =
 =============================================*/
-
-#form .input {
-  width: 600px;
-  height: 70px;
-  border: none;
-  background:none;
-  appearance:none;
-  border-bottom: solid 5px #000;
-  font-size: 40px;
-}
-
-#form p {
-  font-weight: 800;
-  text-align: center;
-}
-
-.button_list button {
-  appearance:none;
-  border: none;
+.member {
   width: 220px;
-  height: 60px;
-  display:inline-block;
-  text-align: center;
-  text-decoration: none;
-  color: black;
+  height: 305px;
   background-color: #fff;
-  float: left;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  display: table-cell;
-  font-size: 30px;
+  margin:auto;
+  border-radius: 3px;
+  img {
+    margin:20px 0 5px 0;
+    width: 150px;
+    background:url("../../src/img/member/0.jpg");
+    background-size: 150px;
+  }
+  .division {
+    margin-bottom: 5px;
+  }
+  small {
+    font-size: 12px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 800;
+  }
 }
-
-.button_list button:nth-child(1),.button_list button:nth-child(3) {
-  margin-right: 10px;
-}
-
-.button_list button:hover {
-  border: solid 3px #4cb0f0;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
 
 /*=============================================
 =            Section comment block            =
 =============================================*/
-
-.menber:last-child {
-  font-size: 26px;
-  padding-top: 20px;
+.list {
+  width: 280px;
+  height: 130px;
+  background-color: #fff;
+  border: solid 1px #000;
+  box-sizing: border-box;
+  .list-row {
+    display: flex;
+    .list-name, .list-image {
+      flex: 1;
+    }
+    .list-name {
+      .kana {
+        margin-top: 16px;
+        font-size: 12px;
+      }
+    }
+  }
+  img {
+    width: 90px;
+    background:url("../img/member/0.jpg");
+  }
+  span {
+    text-align: center;
+    font-size: 22px;
+  }
+  p {
+    width: 150px;
+    margin:auto;
+    font-size: 16px;
+  }
+  &:hover {
+    border: solid 2px #4cb0f0;
+  }
 }
 
-/*=====  End of Section comment block  ======*/
+.employee_list {
+  width: 840px;
+  height: 300px;
+  margin: auto;
+  text-align: left;
+  overflow: scroll;
+  border: solid 3px #000;
+  border-radius: 8px;
+  .initial_list {
+    width: 920px;
+    margin: auto;
+    margin-top: 20px;
+    .initial {
+      width: 72px;
+      height: 72px;
+      line-height: 72px;
+      background-color: #fff;
+      list-style: none;
+      float: left;
+      font-size: 35px;
+      margin: 0 20px 30px 0;
+      border-radius: 5px;
+      &:hover {
+        background-color: #bbb;
+      }
+    }
+  }
+}
+
