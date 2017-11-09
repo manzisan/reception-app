@@ -8,14 +8,8 @@
   <p id="clock"></p>
   <p id="day"></p>
   <div class="btn-column">
-    <div>
-      <a href="recepcode.php">打ち合わせ</a>
-      <a href="sales.php">営業</a>
-    </div>
-    <div>
-      <a href="waitdeli.php">宅配</a>
-      <a href="waitother.php">その他</a>
-    </div>
+    <a href="recepcode.php">アポイントメント<br>有りの方</a>
+    <a href="sales.php">アポイントメント<br>無しの方</a>
   </div>
 </div>
 </body>

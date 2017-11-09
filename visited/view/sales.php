@@ -17,6 +17,10 @@
         <button name = "require" value = "人事">人事</button>
         <button name = "require" value = "その他">その他</button>
       </div>
+      <div>
+      <a href="waitdeli.php">配達業者様</a>
+      <a href="waitother.php">その他のお客様</a>
+    </div>
   </form>
   <a href="index.php" class="back">戻る</a>
 </div>

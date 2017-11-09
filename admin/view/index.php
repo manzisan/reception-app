@@ -76,21 +76,21 @@
   </div>
 </body>
 <script type="text/javascript">
-  var schedule = <?php echo json_encode($schedule_list);?>;
-  var schedule_list = {
+  const schedule = <?php echo json_encode($schedule_list);?>;
+  const schedule_list = {
     schedule_lists: schedule,
     search: ""
   };
-  var myViewModel = new Vue({
+  const myViewModel = new Vue({
     el: '.schedule-list',
     data: schedule_list
   });
-  var dateFormat = 'yy-mm-dd';
+  const dateFormat = 'yy-mm-dd';
   $('#datepicker').datepicker({
     dateFormat: dateFormat
   });
   $('.search-date').on('change',()=> {
-    var filtered_schedules = schedule.filter((sche)=> {
+    const filtered_schedules = schedule.filter((sche)=> {
       if (sche.date == $('#datepicker').val()) {
         return sche.date;
       }

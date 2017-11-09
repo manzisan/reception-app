@@ -31,7 +31,7 @@
       <input type="hidden" name="company" value="<?php echo $company; ?>">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
       <div class="employee_list">
-        <button v-for="friend in friends" class="list" name="emplist" value="{{ friend.id }}">
+        <button v-for="friend in friends" class="list" name="emplist" v-bind:value="friend.id">
           <div class="list-row">
             <div class="list-name">
               <p class="divi">{{ friend.division }}</p>

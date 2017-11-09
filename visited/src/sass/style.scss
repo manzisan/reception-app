@@ -9,21 +9,19 @@
     color: #fff;
   }
   .btn-column {
-    width: 700px;
+    width: 800px;
     margin: 32px auto 0;
-    div {
-      display: flex;
-      a {
-        display: block;
-        flex: 1;
-        padding: 16px 24px;
-        margin: 16px;
-        border: solid 2px #fff;
-        color: #fff;
-        background-color: #333;
-        &:hover {
-          background: none;
-        }
+    display: flex;
+    a {
+      display: block;
+      flex: 1;
+      padding: 40px 40px;
+      margin: 16px;
+      border: solid 2px #fff;
+      color: #fff;
+      background-color: #333;
+      &:hover {
+        background: none;
       }
     }
   }
@@ -36,30 +34,30 @@
   h1 {
     padding: 16px 0;
   }
-  #form input:first-child {
-    width: 340px;
-    height: 120px;
-    border: none;
-    background: none;
-    appearance:none;
-    border-bottom: solid 7px #000;
-    font-size: 100px;
-    margin-right: 10px;
-  }
+  #form {
+    input {
+      width: 340px;
+      height: 120px;
+      border: none;
+      background: none;
+      appearance:none;
+      border-bottom: solid 7px #000;
+      font-size: 100px;
+      margin-right: 10px;
+    }
+    span {
+      height: 60px;
+      width: 60px;
+      text-align: center;
+    }
+    #number-form {
+      text-align: center;
+    }
 
-  #form span {
-    height: 60px;
-    width: 60px;
-    text-align: center;
-  }
-
-  #number-form {
-    text-align: center;
-  }
-
-  #delete-button i {
-    font-style: 50px;
-    font-weight: bold;
+    #delete-button i {
+      font-style: 50px;
+      font-weight: bold;
+    }
   }
 
   .error {
