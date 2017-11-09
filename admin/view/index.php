@@ -89,16 +89,15 @@
   $('#datepicker').datepicker({
     dateFormat: dateFormat
   });
-  var emplist = document.getElementById('emp-name');
-  emplist.addEventListener('input',()=> {
-    // console.log(this.value);
-    // console.log($('#datepicker').val());
-  });
   $('.search-date').on('change',()=> {
-    schedule_list.search = $('#datepicker').val();
-    console.log(schedule_list.search);
+    var filtered_schedules = schedule.filter((sche)=> {
+      if (sche.date == $('#datepicker').val()) {
+        return sche.date;
+      }
+    });
+    myViewModel.schedule_lists = filtered_schedules;
   });
-  $('.check-list').click(function() {
+  $('.check-list').click(()=> {
     if ($(this).prop('checked') == false) {
       $('.alldelete').attr('disabled', 'disabled');
     } else {

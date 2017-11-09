@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../dbconnection/connect.php");
+  include("../../dbconnection/connect.php");
 
   $code = $_POST["code"];
   $sql = $pdo -> prepare('SELECT company, customer from schedule where code = "'.$code.'"');

@@ -63,7 +63,6 @@
 <script>
   $(function(){
     var friends = <?php echo json_encode($friends);?>;
-    console.log(friends);
     var namelist = {
       friends: friends,
       search: ""
@@ -96,7 +95,6 @@
         myViewModel.search = this.innerHTML;
         var list = kanaList[this.innerHTML];
         var filteredFriends = friends.filter(function(friend) {
-          // console.log(friend.kana,friend.kana.charAt(0),list.indexOf(friend.kana.charAt(0)) !== -1)
           return (list.indexOf(friend.kana.charAt(0)) !== -1);
         });
         myViewModel.friends = filteredFriends;

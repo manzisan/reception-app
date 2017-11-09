@@ -1,5 +1,5 @@
 <?php
-  $title = "呼び出し";
+  $title = "トップ";
   include_once "../layout/meta.php";
 ?>
 <body id="top">
