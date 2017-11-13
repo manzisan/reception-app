@@ -22,11 +22,9 @@
   <div id="wrapper">
     <h1>担当者を選択してください</h1>
     <form action="unknown.php" method="post">
-      <button class="forget">担当者がご不明な方</button>
       <input type="hidden" name="company" value="<?php echo $company; ?>">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
     </form>
-
     <form action="callsub.php" method="post" id="form">
       <input type="hidden" name="company" value="<?php echo $company; ?>">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
@@ -56,7 +54,6 @@
         <li class="initial">ら</li>
         <li class="initial">わ</li>
       </ul>
-      <a href="company.php" class="back">戻る</a>
     </form>
   </div>
 </body>

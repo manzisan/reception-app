@@ -3,16 +3,18 @@
   include_once "../layout/meta.php";
 ?>
 <body>
-<div id="wrapper">
-  <h1>会社名とお名前を入力してください</h1>
-  <form action="list.php" method="post" id="form">
-    <p>会社名</p>
-    <input type="text" name="company" class="input">
-    <p>お名前</p>
-    <input type="text" name="name" class="input">
-    <input type="submit" class="next" value="次へ">
-    <a href="recepcode.php" class="back">戻る</a>
-  </form>
-</div>
+  <div id="wrapper">
+    <h1>お客様の会社名とお名前を入力してください</h1>
+    <form action="list.php" method="post" id="form">
+      <p>会社名</p>
+      <input type="text" name="company" class="input">
+      <p>お名前</p>
+      <input type="text" name="name" class="input">
+    </form>
+    <div class="footer-btn-list">
+      <button onClick="location.href='index.php'" class="back">戻る</button>
+      <button onclick="$('#form').submit();" class="next">次へ</button>
+    </div>
+  </div>
 </body>
 </html>

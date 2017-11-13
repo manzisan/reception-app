@@ -8,10 +8,9 @@
   $sql -> execute();
   while($employee = $sql -> fetch(PDO::FETCH_ASSOC)){
     $id = $employee["id"];
-    $div = $employee["division"]; //部門
-    $name = $employee["name"]; //名前
-    $kana = $employee["kana"]; //フリガナ
-    // $cid = $employee["cid"]; //chatwork id
+    $div = $employee["division"];
+    $name = $employee["name"];
+    $kana = $employee["kana"];
   }
 
   $sql = $pdo->prepare('SELECT company, customer from schedule where code = "'.$code.'"');
@@ -36,18 +35,18 @@
     <h1><?php echo $company ?><br><?php echo $customer ?> 様<br>ようこそお越しくださいました。</h1>
     <div class="member">
       <img src="../src/img/member/<?php echo $id != 0 ? $id : 0 ?>.jpg">
-      <p class="division"><?php echo $div ?></p>
-      <small><?php echo $kana ?></small>
+      <p><?php echo $div ?></p>
+      <p><?php echo $kana ?></p>
       <p><?php echo $name;?></p>
     </div>
     <p class="calltext">以上の内容でよろしければ呼び出してください。</p>
-    <form action="wait.php" method="post">
+    <form action="wait.php" method="post" id="form">
       <input type="hidden" name="code" value="<?php echo $code ?>">
-      <input type="submit" class="call" value="呼び出す">
     </form>
-  </div>
-  <div class="a_list">
-    <a href="recepcode.php" class="back">戻る</a>
+    <div class="footer-btn-list">
+      <button onClick="location.href='recepcode.php'" class="back">戻る</button>
+      <button onclick="$('#form').submit();" class="next">呼び出す</button>
+    </div>
   </div>
 </body>
 </html>

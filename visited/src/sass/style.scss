@@ -1,9 +1,9 @@
 ﻿@charset "utf-8";
 @import "reset","layout", "button";
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
+/*===========================
+=            top            =
+===========================*/
 #top {
   #clock,#day {
     color: #fff;
@@ -27,13 +27,10 @@
   }
 }
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
+/*============================
+=            code            =
+============================*/
 #code {
-  h1 {
-    padding: 16px 0;
-  }
   #form {
     input {
       width: 340px;
@@ -52,6 +49,7 @@
     }
     #number-form {
       text-align: center;
+      color: #fff;
     }
 
     #delete-button i {
@@ -90,12 +88,13 @@
   }
 }
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
+
+/*==============================
+=            member            =
+==============================*/
 .member {
   width: 220px;
-  height: 305px;
+  height: 340px;
   background-color: #fff;
   margin:auto;
   border-radius: 3px;
@@ -117,9 +116,9 @@
   }
 }
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
+/*============================
+=            list            =
+============================*/
 .list {
   width: 280px;
   height: 130px;
@@ -164,24 +163,39 @@
   overflow: scroll;
   border: solid 3px #000;
   border-radius: 8px;
-  .initial_list {
-    width: 920px;
-    margin: auto;
-    margin-top: 20px;
-    .initial {
-      width: 72px;
-      height: 72px;
-      line-height: 72px;
-      background-color: #fff;
-      list-style: none;
-      float: left;
-      font-size: 35px;
-      margin: 0 20px 30px 0;
-      border-radius: 5px;
-      &:hover {
-        background-color: #bbb;
-      }
+}
+.initial_list {
+  width: 920px;
+  margin: auto;
+  margin-top: 20px;
+  .initial {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    background-color: #fff;
+    list-style: none;
+    float: left;
+    font-size: 35px;
+    margin: 0 20px 30px 0;
+    border-radius: 5px;
+    &:hover {
+      background-color: #bbb;
     }
   }
 }
 
+/*============================
+=            wait            =
+============================*/
+
+#wait {
+  .detail {
+    margin-top: 48px;
+    p {
+      margin-top: 16px;
+      &.loading {
+        font-size: 150px;
+      }
+    }
+  }
+}

@@ -26,12 +26,12 @@
 <body>
   <div id="wrapper">
     <header>
-      <h1>予定一覧</h1>
+      <h1>アポイントメント一覧</h1>
     </header>
     <div id="refine">
       <div class="input">
         <input type="text" class="search-date form-control" id="datepicker" placeholder="日付" readonly>
-        <input type="text" class="form-control" placeholder="担当者名" id="emp-name">
+        <!-- <input type="text" class="form-control" placeholder="担当者名" id="emp-name"> -->
       </div>
       <div class="ctrl-btn">
         <button type="button" class="btn btn-success" onClick="location.href='add.php'"><i class="fa fa-plus" aria-hidden="true"></i> 登録</button>
