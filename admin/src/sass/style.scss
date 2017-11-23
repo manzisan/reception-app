@@ -3,6 +3,11 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @charset "utf-8";
 
+h1 {
+  color: #fff;
+  margin: 0;
+  padding: 16px;
+}
 
 button {
   transition: 0.3s;
@@ -10,7 +15,6 @@ button {
 
 body {
   font-family: 'Noto Sans Japanese', serif;
-  // background-color: #B9382F;
   background-color: #163E65;
 }
 
@@ -19,13 +23,6 @@ body {
   margin: 32px auto;
   background-color: #333;
   border-radius: 8px;
-}
-header {
-  h1 {
-    color: #fff;
-    margin: 0;
-    padding: 16px;
-  }
 }
 
 #refine {

@@ -1,10 +1,5 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
-
-  $company = $_POST["company"];
-  $customer = $_POST["name"];
-  $require = $_POST["require"];
 
   $title = "呼び出し中";
   include_once "../layout/meta.php";

@@ -28,7 +28,7 @@ gulp.task("visi", function() {
   return merge(
     /* ### sass to css
     --------------------------------------------*/
-    gulp.src(["visited/src/sass/*.scss"])
+    gulp.src(["visitor/src/sass/*.scss"])
         .pipe(frontNote({
           out: '',
           assets: '',
@@ -47,7 +47,7 @@ gulp.task("visi", function() {
         }))
         .pipe(postcss(processors))
         //.pipe(autoprefixer()) // auto vender prefix
-        .pipe(gulp.dest("./visited/src/css")),
+        .pipe(gulp.dest("./visitor/src/css")),
     /* ### js minify
     --------------------------------------------*/
     gulp.src(["src/js/*.js"])
@@ -99,6 +99,6 @@ gulp.task("ad", function() {
 // # gulp task 'gulp watch'
 //**********************************************************************
 gulp.task("watch", function() {
-  gulp.watch(["visited/src/sass/*.scss"],["visi"]);
+  gulp.watch(["visitor/src/sass/*.scss"],["visi"]);
   gulp.watch(["admin/src/sass/*.scss"],["ad"]);
 });

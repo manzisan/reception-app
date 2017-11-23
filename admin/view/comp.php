@@ -1,8 +1,8 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
-  $stmt = $pdo->prepare('select code from schedule');
+  $stmt = $pdo->prepare('SELECT code from schedule');
   $stmt -> execute();
 
   $num = array();
@@ -11,11 +11,10 @@
     $num[] = $row["code"];
   }
 
-  // コード発行
   for($i=0; $i < 9999; $i++) {
-    do{
+    do {
       $rnd = mt_rand(0,9999);
-    }while(isset($num[$rnd]));
+    } while(isset($num[$rnd]));
   }
 
   $rnd = sprintf("%04d",$rnd);
@@ -41,9 +40,7 @@
     <div class="comp_finish">
       <p>登録完了しました。</p>
       <p>招待コードは
-        <span>
-          <input type="text" readonly value="<?php echo $rnd; ?>">
-        </span>です
+        <span><input type="text" readonly value="<?php echo $rnd; ?>"></span>です
       </p>
       <button type="button" class="back btn btn-primary" onClick="location.href='index.php'">TOPへ戻る</button>
     </div>

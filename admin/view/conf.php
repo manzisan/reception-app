@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $date = $_POST["date"];
   $hours = sprintf("%02d",$_POST["hours"]);

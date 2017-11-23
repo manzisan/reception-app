@@ -16,11 +16,6 @@
       </form>
       <?php if($error == 1): ?>
         <p class="error">該当のコードが存在しません。再度入力して下さい。</p>
-        <style>
-          .number_list{
-            /* margin-top:-20px; */
-          }
-        </style>
       <?php endif ?>
       <div class="btn-column">
         <div class="btn-row">
@@ -48,11 +43,17 @@
         <button onclick="$('#form').submit();" class="next">次へ</button>
       </div>
     </div>
+    <div id="loader" class="loader">
+      <div class="loader-animation"></div>
+    </div>
   </div>
 </body>
 <script>
+  setTimeout(()=> {
+    $('#loader').fadeOut(400); 
+  },300);
+
   var b_number = document.getElementsByClassName('button-number');
-  // var num = document.forms.form.numberform.value;
   var d_button = document.getElementById('delete-button');
   var n_form = document.getElementById('number-form');
   var inputValue = "";

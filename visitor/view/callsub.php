@@ -1,6 +1,5 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
 
   $id = $_POST["emplist"];
   $company = $_POST["company"];

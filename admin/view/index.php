@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $stmt = $pdo->prepare('select * from schedule order by hours asc, minutes asc;');
 
@@ -34,8 +34,9 @@
         <!-- <input type="text" class="form-control" placeholder="担当者名" id="emp-name"> -->
       </div>
       <div class="ctrl-btn">
-        <button type="button" class="btn btn-success" onClick="location.href='add.php'"><i class="fa fa-plus" aria-hidden="true"></i> 登録</button>
-        <button type="button" class="btn btn-danger alldelete" onClick="location.href='alldelete.php'" disabled><i class="fa fa-times" aria-hidden="true"></i> 削除</button>
+        <button type="button" class="btn btn-success" onClick="location.href='add.php'"><i class="fa fa-plus" aria-hidden="true"></i> 予定登録</button>
+        <button type="button" class="btn btn-primary" onClick="location.href='add.php'"><i class="fa fa-plus" aria-hidden="true"></i> 社員管理</button>
+        <button type="button" class="btn btn-danger alldelete" onClick="location.href='alldelete.php'" disabled><i class="fa fa-times" aria-hidden="true"></i> 一括削除</button>
       </div>
     </div>
     <table class="table table-hover">
@@ -53,7 +54,7 @@
       </thead>
       <tbody class="schedule-list">
         <tr v-for="schedule in schedule_lists">
-          <td class="check"><input type="checkbox" value="{{ schedule.id }}" class="check-list"></td>
+          <td class="check"><input type="checkbox" v-bind:value="schedule.id" class="check-list"></td>
           <td class="id">{{ schedule.id }}</td>
           <td>{{ schedule.date }} {{ schedule.hours }}:{{ schedule.minutes }}</td>
           <td>{{ schedule.company }}</td>
@@ -85,9 +86,8 @@
     el: '.schedule-list',
     data: schedule_list
   });
-  const dateFormat = 'yy-mm-dd';
   $('#datepicker').datepicker({
-    dateFormat: dateFormat
+    dateFormat: 'yy-mm-dd'
   });
   $('.search-date').on('change',()=> {
     const filtered_schedules = schedule.filter((sche)=> {
