@@ -16,7 +16,7 @@
   $count = $sql -> rowCount();
 
   $title = "呼び出し";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <div id="wrapper">
@@ -55,6 +55,9 @@
         <li class="initial">わ</li>
       </ul>
     </form>
+    <div id="loader" class="loader">
+      <div class="loader-animation"></div>
+    </div>
   </div>
 </body>
 <script>

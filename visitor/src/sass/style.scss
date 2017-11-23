@@ -5,17 +5,18 @@
 =            top            =
 ===========================*/
 #top {
-  #clock,#day {
-    color: #fff;
+  img#logo {
+    margin-top: 24px;
+    padding: 40px 0;
   }
   .btn-column {
     width: 800px;
-    margin: 32px auto 0;
+    margin: 48px auto 0;
     display: flex;
     a {
       display: block;
       flex: 1;
-      padding: 40px 40px;
+      padding: 56px 48px;
       margin: 16px;
       border: solid 2px #fff;
       color: #fff;
@@ -200,28 +201,6 @@
   }
 }
 
- 
-/* ローディング関係ない部分のCSS */
-.button{
-  background:#222;
-  border:1px solid #222;
-  border-radius:5px;
-  color:#fff;
-  display:block;
-  height:60px;
-  line-height:60px;
-  margin:30px auto;
-  text-align:center;
-  width:600px;
-}
-.button:hover{
-  background:#fff;
-  color:#222;
-}
-img{
-  max-width:100%;
-}
-
 /* ローディングの背景部分のCSS */
 .loader{
   // background:#1bb;
@@ -234,9 +213,7 @@ img{
   z-index:10;
 }
  
-.loader-animation,
-.loader-animation:before,
-.loader-animation:after {
+.loader-animation, .loader-animation:before, .loader-animation:after {
   background:#ffffff;
   -webkit-animation:load1 1s infinite ease-in-out;
   animation:load1 1s infinite ease-in-out;

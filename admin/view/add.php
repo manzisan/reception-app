@@ -13,7 +13,7 @@
   $count = $sql -> rowCount();
 
   $title = "予定登録";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body id="add">
   <div id="wrapper">

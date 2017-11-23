@@ -32,7 +32,7 @@
   $stmt -> execute();
 
   $title = "登録完了";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <main>

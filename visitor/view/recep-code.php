@@ -2,7 +2,7 @@
   $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : null;
 
   $title = "コード入力";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body id="code">
   <div id="wrapper">
@@ -38,9 +38,9 @@
         </div>
       </div>
       <div class="footer-btn-list">
-        <button onClick="location.href='index.php'" class="back">戻る</button>
-        <button onClick="location.href='company.php'" class="forget">コードをお忘れの方</button>
-        <button onclick="$('#form').submit();" class="next">次へ</button>
+        <a href="index.php" class="back">戻る</button>
+        <a href="company.php" class="forget">コードをお忘れの方</button>
+        <a onclick="$('#form').submit();" class="next">検索</button>
       </div>
     </div>
     <div id="loader" class="loader">
@@ -49,10 +49,6 @@
   </div>
 </body>
 <script>
-  setTimeout(()=> {
-    $('#loader').fadeOut(400); 
-  },300);
-
   var b_number = document.getElementsByClassName('button-number');
   var d_button = document.getElementById('delete-button');
   var n_form = document.getElementById('number-form');

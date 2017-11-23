@@ -2,7 +2,7 @@
   include("../../dbconnection/config.php");
 
   $title = "呼び出し中";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 </head>
 <body id="wait">

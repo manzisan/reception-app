@@ -13,7 +13,24 @@
   <title><?php echo $title; ?> | 社内受付</title>
 </head>
 <script>
-  $(window).on('touchmove.noScroll', function(e) {
+  $(window).on('touchmove.noScroll', (e)=> {
     e.preventDefault();
+  });
+
+  $(()=> {
+
+    setTimeout(()=> {
+      $('#loader').fadeOut(400); 
+    },300);
+
+    $('a[href^="#"]').click(()=> {
+      var url = $(this).attr('href');
+      $('#loader').fadeIn(600);
+      setTimeout(()=> {
+        location.href = url;
+      }, 800);
+      return false;
+    });
+    
   });
 </script>
