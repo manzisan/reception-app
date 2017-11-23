@@ -1,328 +1,201 @@
 ﻿@charset "utf-8";
-@import "layout", "button";
+@import "reset","layout", "button";
 
-.clock {
-  clear: both;
-  font-size: 120px;
-  color: #000;
+/*===========================
+=            top            =
+===========================*/
+#top {
+  #clock,#day {
+    color: #fff;
+  }
+  .btn-column {
+    width: 800px;
+    margin: 32px auto 0;
+    display: flex;
+    a {
+      display: block;
+      flex: 1;
+      padding: 40px 40px;
+      margin: 16px;
+      border: solid 2px #fff;
+      color: #fff;
+      background-color: #333;
+      &:hover {
+        background: none;
+      }
+    }
+  }
 }
 
-.day {
-  font-size:30px;
-  font-weight: 800;
+/*============================
+=            code            =
+============================*/
+#code {
+  #form {
+    input {
+      width: 340px;
+      height: 120px;
+      border: none;
+      background: none;
+      appearance:none;
+      border-bottom: solid 7px #000;
+      font-size: 100px;
+      margin-right: 10px;
+    }
+    span {
+      height: 60px;
+      width: 60px;
+      text-align: center;
+    }
+    #number-form {
+      text-align: center;
+      color: #fff;
+    }
+
+    #delete-button i {
+      font-style: 50px;
+      font-weight: bold;
+    }
+  }
+
+  .error {
+    color: #f00;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .btn-column {
+    width: 100%;
+    .btn-row {
+      display: flex;
+      width: 50%;
+      margin: 16px auto 0;
+      .button-number {
+        flex: 1;
+        margin-right: 16px;
+        border-radius: 4px;
+        background-color: #333;
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+        line-height: 1;
+        color: #fff;
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
 }
 
-h1  {
-  padding:30px 0 10px 0;
-  text-align: center;
-  margin: auto;
-}
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
+/*==============================
+=            member            =
+==============================*/
 .member {
   width: 220px;
-  height: 305px;
+  height: 340px;
   background-color: #fff;
   margin:auto;
   border-radius: 3px;
+  img {
+    margin:20px 0 5px 0;
+    width: 150px;
+    background:url("../../src/img/member/0.jpg");
+    background-size: 150px;
+  }
+  .division {
+    margin-bottom: 5px;
+  }
+  small {
+    font-size: 12px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 800;
+  }
 }
 
-.member img {
-  margin:20px 0 5px 0;
-  width: 150px;
-  background:url(../img/member/0.jpg);
-  background-size: 150px;
-}
-
-.member .division {
-  margin-bottom: 5px;
-}
-
-.member small {
-  font-size: 12px;
-}
-
-.member .name {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.calltext {
-  margin-top: 10px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-.member {
-  width: 220px;
-  height: 305px;
-  background-color: #fff;
-  margin:auto;
-  border-radius: 3px;
-}
-
-.member img {
-  margin:20px 0 5px 0;
-  width: 150px;
-  background:url("../img/member/0.jpg");
-  background-size: 150px;
-}
-
-.member .division {
-  margin-bottom: 5px;
-}
-
-.member small {
-  font-size: 12px;
-}
-
-.member .name {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.calltext {
-  margin-top: 10px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-#form .input {
-  width: 600px;
-  height: 70px;
-  border: none;
-  background:none;
-  appearance:none;
-  border-bottom: solid 5px #000;
-  font-size: 40px;
-}
-
-#form p {
-  font-size: 30px;
-  font-weight: 800;
-  text-align: center;
-  padding-top: 30px;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
+/*============================
+=            list            =
+============================*/
 .list {
   width: 280px;
   height: 130px;
   background-color: #fff;
-  // float: left;
   border: solid 1px #000;
   box-sizing: border-box;
-  position: relative;
-}
-
-.list_name {
-  // margin-right: 10px;
-}
-
-.list img {
-  width: 90px;
-  background:url("../img/member/0.jpg");
-  // background-size: 90px;
-}
-
-.list span {
-  text-align: center;
-  font-size: 22px;
-  padding-left: 50px;
-  width: 50px;
-}
-
-.list p {
-  width: 150px;
-  margin:auto;
-  font-size: 16px;
-  // padding-left: 50px;
-}
-
-.list:hover {
-  border: solid 2px #4cb0f0;
+  .list-row {
+    display: flex;
+    .list-name, .list-image {
+      flex: 1;
+    }
+    .list-name {
+      .kana {
+        margin-top: 16px;
+        font-size: 12px;
+      }
+    }
+  }
+  img {
+    width: 90px;
+    background:url("../img/member/0.jpg");
+  }
+  span {
+    text-align: center;
+    font-size: 22px;
+  }
+  p {
+    width: 150px;
+    margin:auto;
+    font-size: 16px;
+  }
+  &:hover {
+    border: solid 2px #4cb0f0;
+  }
 }
 
 .employee_list {
   width: 840px;
   height: 300px;
   margin: auto;
-  /*margin-top: 10px;*/
+  text-align: left;
   overflow: scroll;
   border: solid 3px #000;
   border-radius: 8px;
 }
-
 .initial_list {
   width: 920px;
   margin: auto;
   margin-top: 20px;
+  .initial {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    background-color: #fff;
+    list-style: none;
+    float: left;
+    font-size: 35px;
+    margin: 0 20px 30px 0;
+    border-radius: 5px;
+    &:hover {
+      background-color: #bbb;
+    }
+  }
 }
 
-.initial {
-  width: 72px;
-  height: 72px;
-  line-height: 72px;
-  background-color: #fff;
-  list-style: none;
-  float: left;
-  font-size: 35px;
-  margin: 0 20px 30px 0;
-  border-radius: 5px;
+/*============================
+=            wait            =
+============================*/
+
+#wait {
+  .detail {
+    margin-top: 48px;
+    p {
+      margin-top: 16px;
+      &.loading {
+        font-size: 150px;
+      }
+    }
+  }
 }
-
-.initial:hover {
-  background-color: #bbb;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-#form input:first-child {
-  width: 340px;
-  height: 120px;
-  border: none;
-  background: none;
-  appearance:none;
-  border-bottom: solid 7px #000;
-  font-size: 100px;
-  margin-right: 10px;
-}
-
-#form span {
-  font-size: 60px;
-  height: 60px;
-  width: 60px;
-  text-align: center;
-  display: inline-block;
-}
-
- #wrapper {
-  width: 100%;
-    margin: auto;
-    text-align: center;
-}
-
-#number_form {
-  text-align: center;
-}
-
-#delete_button {
-  font-weight: 800;
-}
-
-.nonecode {
-  color: #f00;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.number_list {
-  width: 100%;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
-}
-
-.button_number {
-  flex: 1;
-  margin-right: 16px;
-  float: left;
-  border-radius: 5px;
-  background-color: #fff;
-  font-size: 40px;
-  line-height: 75px;
-  display: inline;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-#form .input {
-  width: 600px;
-  height: 70px;
-  border: none;
-  background:none;
-  appearance:none;
-  border-bottom: solid 5px #000;
-  font-size: 40px;
-}
-
-#form p {
-  font-size: 21px;
-  font-weight: 800;
-  text-align: center;
-  padding-top: 26px;
-}
-
-.button_list button {
-  appearance:none;
-  border: none;
-  width: 220px;
-  height: 60px;
-  display:inline-block;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  background-color: #fff;
-  float: left;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  display: table-cell;
-  font-size: 30px;
-}
-
-.button_list button:nth-child(1),.button_list button:nth-child(3) {
-  margin-right: 10px;
-}
-
-.button_list button:hover {
-  border: solid 3px #4cb0f0;
-}
-
-
-/*=====  End of Section comment block  ======*/
-
-
-
-/*=============================================
-=            Section comment block            =
-=============================================*/
-
-.menber:last-child {
-  font-size: 26px;
-  padding-top: 20px;
-}
-
-/*=====  End of Section comment block  ======*/

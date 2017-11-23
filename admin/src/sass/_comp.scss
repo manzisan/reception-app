@@ -1,6 +1,6 @@
 ﻿@charset"utf-8";
 
-*{
+* {
   margin: 0px;
   padding: 0px;
   font-family: "ヒラギノ角ゴ",sans-serif;
@@ -10,10 +10,9 @@
 main{
   width: 700px;
   margin:auto;
-}
-
-main h1{
-  margin-top: 40px;
+  h1{
+    margin-top: 40px;
+  }
 }
 
 .comp_finish{
@@ -21,16 +20,11 @@ main h1{
   margin: auto;
   margin-top:100px;
   font-size: 25px;
-}
-
-.comp_finish .back{
-  width: 140px;
-  height: 40px;
-  font-size: 15px;
-}
-
-.comp_finish span{
-  border-bottom: solid 2px #f00
+  .back{
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+  }
 }
 
 span input{
