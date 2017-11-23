@@ -1,22 +1,15 @@
-# reception-app
-
-  会社用の受付アプリです。
-  管理画面から予定を登録し、来訪者用画面にて予定を確認。
+# reception application in company
+  # How to Use
   
-  その後予定に紐付いた担当者を呼び出すことができます。
+  ## step 1.
+  `set schedule in admin page.`
+  ## step 2.
+  `Enter the code and mention the person in charge`
+  ## step 3.
+  `After that, you can mention the person associated with the schedule.`
   
-  例としてChatWorkで来訪者の通知を送信しています。
-      
-## Installation
-  create database recep
-  
-  mysql -u root recep < dump.sql
-  
-## Issues
-
-- 管理画面、来訪者画面ともにUI改善
-- 管理画面の予定一覧内での絞り込み検索
-
+  # mention to only webhook.
+ 
 ## License
 
  copyright 2017 manzisan
