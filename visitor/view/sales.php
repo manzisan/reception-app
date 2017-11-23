@@ -23,7 +23,7 @@
       </div>
     </form>
     <div class="footer-btn-list">
-      <a href="recepcode.php" class="back">戻る</button>
+      <a href="recep-code.php" class="back">戻る</button>
       <a onclick="$('#form').submit();" class="next">次へ</button>
     </div>
     <div id="loader" class="loader">
