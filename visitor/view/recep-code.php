@@ -14,9 +14,6 @@
           <i class="fa fa-times" aria-hidden="true"></i>
         </span>
       </form>
-      <?php if($error == 1): ?>
-        <p class="error">該当のコードが存在しません。再度入力して下さい。</p>
-      <?php endif ?>
       <div class="btn-column">
         <div class="btn-row">
           <button class="button-number">1</button>
@@ -39,8 +36,8 @@
       </div>
       <div class="footer-btn-list">
         <a href="index.php" class="back">戻る</button>
-        <a href="company.php" class="forget">コードをお忘れの方</button>
-        <a onclick="$('#form').submit();" class="next">検索</button>
+        <a href="company.php" class="forget">コードをお忘れの方</a>
+        <a class="next" id="submit">検索</a>
       </div>
     </div>
     <div id="loader" class="loader">
@@ -48,6 +45,8 @@
     </div>
   </div>
 </body>
+<script src="../src/js/all.js"></script>
+
 <script>
   var b_number = document.getElementsByClassName('button-number');
   var d_button = document.getElementById('delete-button');
@@ -70,6 +69,16 @@
     e.preventDefault();
     inputValue　=　inputValue.slice(0,-1);
     n_form.value = inputValue;
+  });
+  if (window.location.search == "?error=1") {
+    console.log("aa");
+  }
+  $('#submit').on("click",()=> {
+    if (n_form.value.length == 0) {
+      alertify.error("length 0");
+    } else {
+      $('#form').submit();
+    }
   });
 </script>
 </html>
