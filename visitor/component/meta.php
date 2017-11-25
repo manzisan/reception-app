@@ -1,3 +1,4 @@
+<?php include_once "sql-ctrl.php"; ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
