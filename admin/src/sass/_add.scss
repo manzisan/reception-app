@@ -2,9 +2,9 @@
   main {
     width: 680px;
     margin: 0 auto;
-
-    h2{
-      font-size:20px;
+    background-color: #333;
+    h1 {
+      color: #fff;
     }
   }
 
@@ -12,6 +12,7 @@
     width: 500px;
     .input-label {
       margin: 16px 0 0;
+      color: #fff;
       font-weight: bold;
     }
     input[type="text"].form-control,select.form-control {

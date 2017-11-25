@@ -1,8 +1,6 @@
 <?php
-  $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : null;
-
   $title = "コード入力";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body id="code">
   <div id="wrapper">
@@ -14,14 +12,6 @@
           <i class="fa fa-times" aria-hidden="true"></i>
         </span>
       </form>
-      <?php if($error == 1): ?>
-        <p class="error">該当のコードが存在しません。再度入力して下さい。</p>
-        <style>
-          .number_list{
-            /* margin-top:-20px; */
-          }
-        </style>
-      <?php endif ?>
       <div class="btn-column">
         <div class="btn-row">
           <button class="button-number">1</button>
@@ -39,20 +29,25 @@
           <button class="button-number">9</button>
         </div>
         <div class="btn-row">
+          <button class="button-number" style="visibility: hidden;"></button>
           <button class="button-number">0</button>
+          <button class="button-number" style="visibility: hidden;"></button>
         </div>
       </div>
       <div class="footer-btn-list">
-        <button onClick="location.href='index.php'" class="back">戻る</button>
-        <button onClick="location.href='company.php'" class="forget">コードをお忘れの方</button>
-        <button onclick="$('#form').submit();" class="next">次へ</button>
+        <a href="index.php" class="back">戻る</button>
+        <a href="company.php" class="forget">コードをお忘れの方</a>
+        <a class="next" id="submit">検索</a>
       </div>
+    </div>
+    <div id="loader" class="loader">
+      <div class="loader-animation"></div>
     </div>
   </div>
 </body>
+<script src="../src/js/alertify.js"></script>
 <script>
   var b_number = document.getElementsByClassName('button-number');
-  // var num = document.forms.form.numberform.value;
   var d_button = document.getElementById('delete-button');
   var n_form = document.getElementById('number-form');
   var inputValue = "";
@@ -73,6 +68,18 @@
     e.preventDefault();
     inputValue　=　inputValue.slice(0,-1);
     n_form.value = inputValue;
+  });
+  if (window.location.search == "?error=1") {
+    alertify.error("入力されたコードは存在しません。<br>お手数ですが再度ご入力ください。");
+  }
+  $('#submit').on("click",()=> {
+    if (n_form.value.length == 0) {
+      alertify.error("コードを入力してください。");
+    } else if (n_form.value.length != 4) {
+      alertify.error("コードを４桁で入力してください。");
+    } else {
+      $('#form').submit();
+    }
   });
 </script>
 </html>

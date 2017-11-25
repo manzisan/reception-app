@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $date = $_POST["date"];
   $hours = sprintf("%02d",$_POST["hours"]);
@@ -18,7 +18,7 @@
   $disp_employee = $name;
 
   $title = "登録完了";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <main>

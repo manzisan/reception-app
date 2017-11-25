@@ -1,6 +1,5 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
 
   $id = $_POST["emplist"];
   $company = $_POST["company"];
@@ -16,7 +15,7 @@
   }
 
   $title = "呼び出し";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <div id="wrapper">

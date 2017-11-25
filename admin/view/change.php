@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $id = $_POST["id"];
 
@@ -27,7 +27,7 @@
   $count = $sql -> rowCount();
 
   $title = "予定変更";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body id="change">
   <main>

@@ -27,7 +27,6 @@ html {
   }
 }
 
-
 #wrapper {
   width: 100%;
   height: 100%;
@@ -49,4 +48,33 @@ html {
   appearance:none;
   border-bottom: solid 5px #000;
   font-size: 40px;
+}
+
+.ajs-message,.ajs-error,.ajs-visible{
+  color: #fff;
+  font-size: 16px;
+}
+
+
+.footer-btn-list {
+  margin-top: 32px;
+  display: flex;
+  .back,.forget,.next {
+    flex: 1;
+    height: 80px;
+    margin-right: 16px;
+    border-radius: 4px;
+    line-height: 3;
+    color: #fff;
+    border: solid 1px #fff;
+  }
+  .back {
+    background-color: #aaa;
+  }
+  .forget {
+    // background-color: ;
+  }
+  .next {
+    background-color: #377BB5;
+  }
 }

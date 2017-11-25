@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $code = $_POST["code"];
   $sql = $pdo -> prepare('SELECT company, customer from schedule where code = "'.$code.'"');
@@ -37,7 +37,7 @@
   $sql -> execute();
 
   $title = "呼び出し中";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body id="wait">
   <div id="wrapper">

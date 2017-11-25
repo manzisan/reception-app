@@ -1,6 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
-  include("../../dbconnection/connect.php");
+  
 
   $id = $_POST["id"];
 
@@ -18,7 +18,7 @@
   }
 
   $title = "削除確認";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <main>

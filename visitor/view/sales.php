@@ -1,6 +1,6 @@
 <?php 
   $title = "入力";
-  include_once "../layout/meta.php";
+  include_once "../component/meta.php";
 ?>
 <body>
   <div id="wrapper">
@@ -23,8 +23,11 @@
       </div>
     </form>
     <div class="footer-btn-list">
-      <button onClick="location.href='recepcode.php'" class="back">戻る</button>
-      <button onclick="$('#form').submit();" class="next">次へ</button>
+      <a href="recep-code.php" class="back">戻る</button>
+      <a onclick="$('#form').submit();" class="next">次へ</button>
+    </div>
+    <div id="loader" class="loader">
+      <div class="loader-animation"></div>
     </div>
   </div>
 </body>
