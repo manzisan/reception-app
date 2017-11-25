@@ -1,6 +1,4 @@
 <?php
-  $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : null;
-
   $title = "コード入力";
   include_once "../component/meta.php";
 ?>
@@ -31,7 +29,9 @@
           <button class="button-number">9</button>
         </div>
         <div class="btn-row">
+          <button class="button-number" style="visibility: hidden;"></button>
           <button class="button-number">0</button>
+          <button class="button-number" style="visibility: hidden;"></button>
         </div>
       </div>
       <div class="footer-btn-list">
@@ -45,8 +45,7 @@
     </div>
   </div>
 </body>
-<script src="../src/js/all.js"></script>
-
+<script src="../src/js/alertify.js"></script>
 <script>
   var b_number = document.getElementsByClassName('button-number');
   var d_button = document.getElementById('delete-button');
@@ -71,11 +70,13 @@
     n_form.value = inputValue;
   });
   if (window.location.search == "?error=1") {
-    console.log("aa");
+    alertify.error("入力されたコードは存在しません。<br>お手数ですが再度ご入力ください。");
   }
   $('#submit').on("click",()=> {
     if (n_form.value.length == 0) {
-      alertify.error("length 0");
+      alertify.error("コードを入力してください。");
+    } else if (n_form.value.length != 4) {
+      alertify.error("コードを４桁で入力してください。");
     } else {
       $('#form').submit();
     }
