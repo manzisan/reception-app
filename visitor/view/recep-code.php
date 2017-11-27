@@ -70,7 +70,9 @@
     n_form.value = inputValue;
   });
   if (window.location.search == "?error=1") {
-    alertify.error("入力されたコードは存在しません。<br>お手数ですが再度ご入力ください。");
+    setTimeout(()=>{
+      alertify.error("入力されたコードは存在しません。<br>お手数ですが再度ご入力ください。");
+    },300);
   }
   $('#submit').on("click",()=> {
     if (n_form.value.length == 0) {

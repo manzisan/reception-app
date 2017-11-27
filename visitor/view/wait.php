@@ -49,6 +49,9 @@
         <button onClick="location.href='index.php'" class="back">TOPへ戻る</button>
       </div>
     </div>
+    <div id="loader" class="loader">
+      <div class="loader-animation"></div>
+    </div>
   </div>
 </body>
 </html>
