@@ -76,7 +76,7 @@
   }
   $('#submit').on("click",()=> {
     if (n_form.value.length == 0) {
-      alertify.error("コードを入力してください。");
+      alertify.error("コードが入力されていません。");
     } else if (n_form.value.length != 4) {
       alertify.error("コードを４桁で入力してください。");
     } else {

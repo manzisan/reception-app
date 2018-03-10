@@ -1,40 +1,5 @@
 <?php
   include("../../dbconnection/config.php");
-  
-
-  $code = $_POST["code"];
-  $sql = $pdo -> prepare('SELECT company, customer from schedule where code = "'.$code.'"');
-  $sql -> execute();
-  while($visitor = $sql -> fetch(PDO::FETCH_ASSOC)){
-    $company = $visitor["company"];
-    $customer = $visitor["customer"];
-  }
-
-  $url = [
-    "https://discordapp.com/api/webhooks/379591248060743682/00-s1mAkyOvsacbgiSrKTvcUD2yaYnuqqHuXl_hfZImOSBfM6nIejfFjsfKecWwvFXHa",
-
-    "https://discordapp.com/api/webhooks/379596931443458048/TEC3oEJTmXmtx6-YquaYuDZ5TKPI_ciIb2CqIOv1NCLBligodr24Yb8x6NLvi7oPqgaM"
-  ];
-
-  $option = [
-    "content" => $company."の".$customer."様がお見えになられています。"
-  ];
-
-  foreach ($url as $val) {
-    $ch = curl_init();
-    curl_setopt_array($ch, [
-      CURLOPT_URL => $val,
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POST => true,
-      CURLOPT_POSTFIELDS => http_build_query($option),
-    ]);
-    $response = curl_exec($ch);
-  }
-
-  curl_close($ch);
-
-  $sql = $pdo -> prepare('delete from schedule where code = "'.$code.'"');
-  $sql -> execute();
 
   $title = "呼び出し中";
   include_once "../component/meta.php";

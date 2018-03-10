@@ -1,19 +1,6 @@
 <?php
   include("../../dbconnection/config.php");
 
-  $id = $_POST["emplist"];
-  $company = $_POST["company"];
-  $visitor = $_POST["name"];
-
-  $sql = $pdo->prepare('SELECT division, name, kana, nickname FROM employee where id = "'.$id.'"');
-  $sql -> execute();
-  while($employee = $sql -> fetch(PDO::FETCH_ASSOC)){
-    $div = $employee["division"];
-    $name = $employee["name"];
-    $kana = $employee["kana"];
-    $nickname = $employee["nickname"];
-  }
-
   $title = "呼び出し";
   include_once "../component/meta.php";
 ?>
